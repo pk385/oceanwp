@@ -18,7 +18,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTypographyCustomizer.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTypographyCustomizer.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -241,7 +241,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTypographyCustomizer.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTypographyCustomizer.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -449,7 +449,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTypographyCustomizer.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTypographyCustomizer.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -657,7 +657,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTypographyCustomizer.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTypographyCustomizer.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -865,7 +865,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTypographyCustomizer.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTypographyCustomizer.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1073,7 +1073,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTypographyCustomizer.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTypographyCustomizer.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1281,7 +1281,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTypographyCustomizer.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTypographyCustomizer.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1489,7 +1489,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTypographyCustomizer.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTypographyCustomizer.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1697,7 +1697,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTypographyCustomizer.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTypographyCustomizer.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
