@@ -20,9 +20,9 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		 */
 		public function __construct() {
 
-			add_action( 'customize_register', 		array( $this, 'customizer_options' ) );
+			add_action( 'customize_register', 		array( $this, 'customizer_options' ));
 			add_action( 'wp_enqueue_scripts', 		array( $this, 'load_fonts' ) );
-		
+
 			// CSS output
 			if ( is_customize_preview() ) {
 				add_action( 'customize_preview_init', array( $this, 'customize_preview_init' ) );
@@ -32,6 +32,34 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 			}
 
 		}
+
+
+
+		/**
+		 * Optimize typography for customizer
+		 *
+		 * @since 1.0.0
+		 */
+		private function optimize_typography_for_customizer( $wp_customize ) {
+			$default_type = 'all';
+			$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : $default_type;
+			if( $type === 'typography' ) {
+				// Remove Other Sections
+				foreach ($wp_customize->sections() as $key => $value) {
+					if ( $key !== 'ocean_typography_general' && $value->panel !== 'ocean_typography_panel' ) {
+						$wp_customize->remove_section($key);
+					}
+				}
+
+				// Remove Other Panels
+				foreach ($wp_customize->panels() as $key => $value) {
+					if ( $key !== 'ocean_typography_panel' ) {
+						$wp_customize->remove_panel($key);
+					}
+				}
+			}
+		}
+
 
 		/**
 		 * Array of Typography settings to add to the customizer
@@ -247,6 +275,9 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		 */
 		public function customizer_options( $wp_customize ) {
 
+			// Optimize typography for customizer
+			$this->optimize_typography_for_customizer( $wp_customize );
+
 			// Get elements
 			$elements = self::elements();
 
@@ -376,7 +407,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 								'section' 			=> 'ocean_typography_'. $element,
 								'settings' 			=> $element .'_typography[font-family]',
 								'priority' 			=> 10,
-								'type' 				=> 'select',
+								'type' 				=> 'dropdown_select2',
 								'active_callback' 	=> $active_callback,
 						) ) );
 
@@ -519,7 +550,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 						// Get default
 						$default = ! empty( $array['defaults']['line-height'] ) ? $array['defaults']['line-height'] : NULL;
-						
+
 						$wp_customize->add_setting( $element .'_typography[line-height]', array(
 							'type' 				=> 'theme_mod',
 							'sanitize_callback' => 'oceanwp_sanitize_number',
@@ -563,7 +594,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 						// Get default
 						$default = ! empty( $array['defaults']['letter-spacing'] ) ? $array['defaults']['letter-spacing'] : NULL;
-						
+
 						$wp_customize->add_setting( $element .'_typography[letter-spacing]', array(
 							'type' 				=> 'theme_mod',
 							'sanitize_callback' => 'oceanwp_sanitize_number',
@@ -607,7 +638,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 						// Get default
 						$default = ! empty( $array['defaults']['color'] ) ? $array['defaults']['color'] : NULL;
-						
+
 						$wp_customize->add_setting( $element .'_typography[color]', array(
 							'type' 				=> 'theme_mod',
 							'default' 			=> '',
@@ -615,6 +646,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'transport' 		=> $transport,
 							'default' 			=> $default,
 						) );
+
 						$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, $element .'_typography[color]', array(
 							'label' 			=> esc_html__( 'Font Color', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
@@ -636,14 +668,14 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		 */
 		public function customize_preview_init() {
 			wp_enqueue_script( 'oceanwp-typography-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/typography-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
-			wp_localize_script( 'oceanwp-typography-customize-preview', 'oceanwpTypographyCustomizer', array(
+			wp_localize_script( 'oceanwp-typography-customize-preview', 'oceanwpTG', array(
 				'googleFontsUrl' 	=> '//fonts.googleapis.com',
 				'googleFontsWeight' => '100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i',
 			) );
 
 			if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 				wp_enqueue_script( 'oceanwp-woo-typography-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/woo-typography-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
-				wp_localize_script( 'oceanwp-woo-typography-customize-preview', 'oceanwpTypographyCustomizer', array(
+				wp_localize_script( 'oceanwp-woo-typography-customize-preview', 'oceanwpTG', array(
 					'googleFontsUrl' 	=> '//fonts.googleapis.com',
 					'googleFontsWeight' => '100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i',
 				) );
