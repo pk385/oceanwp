@@ -11,27 +11,20 @@ ul.customize-pane-parent li[id="accordion-section-oceanwp_upsell_section"] {
     order: -99995;
 }
 
-.oceanwp-customizer-tabs-wrap {
-    height: 46px;
+.oceanwp-customizer-tabs {
     order: -99999;
-    border-bottom: solid 2px #5277fe;
     overflow: hidden;
-}
-
-.oceanwp-customizer-tabs-wrap:hover {
-    height: auto;
-}
-
-.oceanwp-customizer-tabs-wrap ul {
     display: flex;
     flex-direction: column;
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: solid 2px #5277fe !important;
+    line-height: 3 !important;
+    padding-left: 20px !important;
+    font-weight: 600 !important;
 }
 
-.oceanwp-customizer-tabs-wrap ul li {
-    margin: 0;
-}
-
-.oceanwp-customizer-tabs-wrap ul li a {
+.oceanwp-customizer-tabs option {
     position: relative;
     display: block;
     line-height: 2;
@@ -43,18 +36,14 @@ ul.customize-pane-parent li[id="accordion-section-oceanwp_upsell_section"] {
     border-bottom: solid 1px #ddd;
 }
 
-.oceanwp-customizer-tabs-wrap ul li.active {
-    order: -999;
-}
-
-.oceanwp-customizer-tabs-wrap ul li.active a {
+/* .oceanwp-customizer-tabs ul li.active a {
     background-color: #5277fe;
     color: #fff !important;
     font-weight: bold;
     pointer-events: none;
 }
 
-.oceanwp-customizer-tabs-wrap ul li a:hover {
+.oceanwp-customizer-tabs ul li a:hover {
     font-weight: bold;
     color: blue;
-}
+} */

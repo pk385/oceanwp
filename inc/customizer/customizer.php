@@ -43,28 +43,36 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 */
 		public function render_tabs() {
 			remove_action( 'customize_render_panel', array( $this, 'render_tabs' ) );
-			$tabs = apply_filters( 'oceanwp-customizer-tabs', [
-				'general' => __('General', 'oceanwp'),
-				'typography' => __('Typography', 'oceanwp'),
+			$tabs = array(
+				'default' => __('Default', 'oceanwp'),
+				'general' => __('General Options', 'oceanwp'),
+				'header' => __('Header', 'oceanwp'),
 				'blog' => __('Blog', 'oceanwp'),
-				'header-footer' => __('Header & Footer', 'oceanwp'),
+				'woocommerce' => __('Woocommerce', 'oceanwp'),
+				'footer' => __('Footer', 'oceanwp'),
+				'typography' => __('Typography', 'oceanwp'),
 				'sidebar' => __('Sidebar', 'oceanwp'),
-			]);
+			);
 
-			$list = '';
-			foreach ($tabs as $id => $label) {
-				$url   = admin_url('customize.php?oceanwp-customizer-part=' . $id);
-				$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : 'header-footer';
-				$class = "";
-				if ( $type === $id ) {
-					$class = "class=\"active\"";
-				}
-				$list .= wp_sprintf( '<li data-id="%s"%s><a href="%s">%s</a></li>', $id, $class , $url, $label );
+			if ( ! OCEANWP_WOOCOMMERCE_ACTIVE ) {
+				unset( $tabs['woocommerce'] );
 			}
 
-			echo '<div class="oceanwp-customizer-tabs-wrap">';
+			$tabs = apply_filters( 'oceanwp-customizer-tabs', $tabs );
+			$list = '';
+			foreach ($tabs as $id => $label) {
+				// $url   = admin_url('customize.php?oceanwp-customizer-part=' . $id);
+				$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : 'header-footer';
+				$selected = "";
+				if ( $type === $id ) {
+					$selected = "selected=\"selected\"";
+				}
+				$list .= wp_sprintf( '<option value="%s"%s>%s</option>', $id, $selected, $label );
+			}
+
+			echo '<select class="oceanwp-customizer-tabs">';
 				echo '<ul>' . $list . '</ul>';
-			echo '</div>';
+			echo '</select>';
 		}
 
 		/**
@@ -193,9 +201,11 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 				'blog' => [
 					'blog',
 				],
-				'header-footer' => [
+				'header' => [
 					'header',
 					'topbar',
+				],
+				'footer' => [
 					'footer-widgets',
 					'footer-bottom',
 				],
@@ -237,7 +247,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			}
 
 			// If WooCommerce is activated.
-			if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
+			if ( OCEANWP_WOOCOMMERCE_ACTIVE && 'woocommerce' === $type) {
 				require_once( $dir .'woocommerce.php' );
 			}
 
