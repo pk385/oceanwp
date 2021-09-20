@@ -33,34 +33,6 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 		}
 
-
-
-		/**
-		 * Optimize typography for customizer
-		 *
-		 * @since 1.0.0
-		 */
-		private function optimize_typography_for_customizer( $wp_customize ) {
-			$default_type = 'all';
-			$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : $default_type;
-			if( $type === 'typography' ) {
-				// Remove Other Sections
-				foreach ($wp_customize->sections() as $key => $value) {
-					if ( $key !== 'ocean_typography_general' && $value->panel !== 'ocean_typography_panel' ) {
-						$wp_customize->remove_section($key);
-					}
-				}
-
-				// Remove Other Panels
-				foreach ($wp_customize->panels() as $key => $value) {
-					if ( $key !== 'ocean_typography_panel' ) {
-						$wp_customize->remove_panel($key);
-					}
-				}
-			}
-		}
-
-
 		/**
 		 * Array of Typography settings to add to the customizer
 		 *
@@ -274,9 +246,6 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public function customizer_options( $wp_customize ) {
-
-			// Optimize typography for customizer
-			$this->optimize_typography_for_customizer( $wp_customize );
 
 			// Get elements
 			$elements = self::elements();

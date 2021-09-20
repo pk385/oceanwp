@@ -14,7 +14,7 @@ ul.customize-pane-parent li[id="accordion-section-oceanwp_upsell_section"] {
 .oceanwp-customizer-tabs {
     order: -99999;
     overflow: hidden;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     border-radius: 0 !important;
     border: none !important;

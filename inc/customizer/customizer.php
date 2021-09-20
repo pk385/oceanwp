@@ -23,6 +23,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 */
 		public function __construct() {
 
+
 			add_action( 'customize_register',					array( $this, 'custom_controls' ) );
 			add_action( 'customize_register',					array( $this, 'controls_helpers' ) );
 			add_action( 'customize_register',					array( $this, 'customize_register' ), 11 );
@@ -32,7 +33,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			add_action( 'customize_render_panel', 				array( $this, 'render_tabs' ) );
 			add_action( 'customize_controls_enqueue_scripts', 	array( $this, 'custom_customize_enqueue' ), 7 );
 			add_action( 'customize_controls_print_scripts', 'ocean_get_svg_icon' );
-
+			require_once( OCEANWP_INC_DIR . 'customizer/settings/isolation.php' );
 		}
 
 
@@ -73,6 +74,8 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			echo '<select class="oceanwp-customizer-tabs">';
 				echo '<ul>' . $list . '</ul>';
 			echo '</select>';
+
+
 		}
 
 		/**
@@ -216,6 +219,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 					'typography',
 				],
 			);
+
 			$default_type = 'all';
 			if ( basename( $_SERVER['PHP_SELF'] ) === 'customize.php' ){
 				$default_type = 'general';
@@ -224,7 +228,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : $default_type;
 			$files = isset( $list [ $type ] ) ? $list[ $type ] : array();
 
-			do_action( 'oceanwp_register_customizer_controls', $type );
+			do_action( 'before_oceanwp_register_customizer_controls', $type );
 
 			foreach ( $files as $key ) {
 
@@ -252,20 +256,21 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			}
 
 			// Easy Digital Downloads Settings.
-			if ( OCEANWP_EDD_ACTIVE ) {
+			if ( OCEANWP_EDD_ACTIVE && 'woocommerce' === $type ) {
 				require_once( $dir .'edd.php' );
 			}
 
 			// If LifterLMS is activated.
-			if ( OCEANWP_LIFTERLMS_ACTIVE ) {
+			if ( OCEANWP_LIFTERLMS_ACTIVE && 'general' === $type ) {
 				require_once( $dir .'lifterlms.php' );
 			}
 
 			// If LearnDash is activated.
-			if ( OCEANWP_LEARNDASH_ACTIVE ) {
+			if ( OCEANWP_LEARNDASH_ACTIVE && 'general' === $type ) {
 				require_once( $dir .'learndash.php' );
 			}
 
+			do_action( 'after_oceanwp_register_customizer_controls', $type );
 		}
 
 
@@ -275,6 +280,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public function customize_panel_init() {
+			wp_enqueue_script( 'oceanwp-customize-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize.js', array( 'jquery' ) );
 			wp_enqueue_style( 'oceanwp-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customize-preview.min.css');
 			wp_localize_script( 'oceanwp-customize-preview', 'oceanwpTG', array(
 				'googleFontsUrl' 	=> '//fonts.googleapis.com',
