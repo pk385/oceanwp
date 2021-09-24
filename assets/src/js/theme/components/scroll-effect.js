@@ -2,11 +2,13 @@ import { DOM } from "../../constants";
 import { isSelectorValid, offset } from "../../lib/utils";
 
 class ScrollEffect {
-    #targetElem;
     #lastScrollTop = 0;
 
     constructor() {
-        if (!DOM.body.classList.contains("single-product") && !DOM.body.classList.contains("no-local-scroll")) {
+        if (
+            !DOM.body.classList.contains("single-product") &&
+            !DOM.body.classList.contains("no-local-scroll")
+        ) {
             this.#setupEventListeners();
         }
     }
@@ -16,15 +18,18 @@ class ScrollEffect {
             .querySelectorAll(
                 'a[href*="#"]:not([href="#"]), a.local[href*="#"]:not([href="#"]), .local a[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"]), a.sidr-class-menu-link[href*="#"]:not([href="#"])'
             )
-            .forEach((scrollItem) => {
+            .forEach(scrollItem => {
                 scrollItem.addEventListener("click", this.#onScrollItemClick);
             });
     };
 
-    #onScrollItemClick = (event) => {
+    #onScrollItemClick = event => {
         const scrollItem = event.currentTarget;
 
-        if (scrollItem.classList.contains("elementor-item-anchor") && scrollItem.classList.contains("has-submenu")) {
+        if (
+            scrollItem.classList.contains("elementor-item-anchor") &&
+            scrollItem.classList.contains("has-submenu")
+        ) {
             return;
         }
 
@@ -38,23 +43,26 @@ class ScrollEffect {
         ) {
             const href = scrollItem.getAttribute("href");
             const id = href.substring(href.indexOf("#")).slice(1);
+            let targetElem = null;
 
             if (isSelectorValid(`#${id}`)) {
-                this.#targetElem = document.querySelector(`#${id}`);
+                targetElem = document.querySelector(`#${id}`);
             }
 
-            if (id != "" && !!this.#targetElem) {
+            if (id != "" && !!targetElem) {
                 event.preventDefault();
                 event.stopPropagation();
 
                 let scrollPosition =
-                    offset(this.#targetElem).top -
+                    offset(targetElem).top -
                     this.#getAdminBarHeight() -
                     this.#getTopbarHeight() -
                     this.#getStickyHeaderHeight();
 
                 if (
-                    !document.querySelector("#site-header-sticky-wrapper")?.classList.contains("is-sticky") &&
+                    !document
+                        .querySelector("#site-header-sticky-wrapper")
+                        ?.classList.contains("is-sticky") &&
                     (!!document.querySelector("#site-header-sticky-wrapper") ||
                         !!document.querySelector("#stick-anything-header") ||
                         !!document
@@ -65,7 +73,7 @@ class ScrollEffect {
                     !DOM.header.site.classList.contains("medium-header") &&
                     !DOM.header.site.classList.contains("vertical-header")
                 ) {
-                    window.addEventListener("scroll", this.#fixMultiMenu);
+                    window.addEventListener("scroll", e => this.#fixMultiMenu(e, targetElem));
                 }
 
                 DOM.html.scrollTo({
@@ -127,17 +135,20 @@ class ScrollEffect {
 
         if (
             !DOM.header.site &&
-            !!document.querySelector(".elementor-section-wrap")?.firstElementChild.classList.contains("elementor-sticky")
+            !!document
+                .querySelector(".elementor-section-wrap")
+                ?.firstElementChild.classList.contains("elementor-sticky")
         ) {
-            return document.querySelector(".elementor-section-wrap")?.firstElementChild.offsetHeight;
+            return document.querySelector(".elementor-section-wrap")?.firstElementChild
+                .offsetHeight;
         }
 
         return 0;
     };
 
-    #fixMultiMenu = (event) => {
+    #fixMultiMenu = (event, targetElem) => {
         const fixedOffset =
-            offset(this.#targetElem).top -
+            offset(targetElem).top -
             this.#getAdminBarHeight() -
             this.#getTopbarHeight() -
             this.#getStickyHeaderHeight(true);
@@ -147,7 +158,7 @@ class ScrollEffect {
 
             if (DOM.header.site?.offsetHeight - 1 > this.#getStickyHeaderHeight(true)) {
                 const scrollPosition =
-                    offset(this.#targetElem).top -
+                    offset(targetElem).top -
                     this.#getAdminBarHeight() -
                     this.#getTopbarHeight() -
                     DOM.header.site?.offsetHeight;
