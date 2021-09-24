@@ -17,15 +17,15 @@ class SearchHandler {
         /**
          * Map The Controls
          */
-        this.controls = jQuery.map( _wpCustomizeSettings.controls, function( control, i ) {
-            jQuery.map(_wpCustomizeSettings.sections, function(section, i) {
+        this.controls = jQuery.map( _wpCustomizeSettings.controls, function( control, cid ) {
+            jQuery.map( _wpCustomizeSettings.sections, function( section, i ) {
                 if ( control.section == section.id ) {
-                    jQuery.map( _wpCustomizeSettings.panels, function(panel, i) {
+                    jQuery.map( _wpCustomizeSettings.panels, function( panel, i ) {
                         if ( '' == section.panel ) {
                             control.panelName = section.title;
                         }
 
-                        if (section.panel == panel.id) {
+                        if ( section.panel == panel.id ) {
                             control.sectionName = section.title;
                             control.panel = section.panel;
                             control.panelName = panel.title;
@@ -56,6 +56,11 @@ class SearchHandler {
             if ( control.sectionName === null ) control.sectionName = '';
 
             const regex = new RegExp(string, 'gi');
+
+            if ( typeof control.content !== 'undefined' ) {
+                if ( control.content.match(regex) )
+                    return control.content.match(regex);
+            }
 
             if ( typeof control.label !== 'undefined' ) {
                 if ( control.label.match(regex) )

@@ -44,19 +44,19 @@ const SearchBoxModal = ( { ...props } ) => {
     const onSearch = ( e ) => {
         var search = e.target.value;
         var searchInControlsResults = props.SearchHandler.searchInControls( search );
-
         setsearchResults( '' );
 
         if ( ! searchInControlsResults.length ) {
             return false;
         }
 
+
         /**
          * Prepare View From Search Result
          */
         var list = searchInControlsResults.map( function( data, index ) {
 
-            if ( ! data.label || typeof data.panel === 'undefined' ) {
+            if ( ! data.label || typeof data.panelName === 'undefined' ) {
                 return;
             }
 
@@ -96,7 +96,7 @@ const SearchBoxModal = ( { ...props } ) => {
                 <Form.Group className="mb-3" controlId="search">
                     <Form.Control type="text" placeholder={ __( "Search..." ) } onChange={ onSearch } />
                     <Form.Text className="text-muted">
-                        { __( "At least three characters are required." ) }
+                        { __( "Please enter the option name." ) }
                     </Form.Text>
                 </Form.Group>
                 <ListGroup className="mt-4">
