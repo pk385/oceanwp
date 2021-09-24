@@ -31,14 +31,25 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			add_action( 'customize_controls_print_footer_scripts', array( $this, 'customize_panel_init' ) );
 			add_action( 'customize_preview_init', 				array( $this, 'customize_preview_init' ) );
 			add_action( 'customize_render_panel', 				array( $this, 'render_tabs' ) );
+			// add_action( 'customize_render_panel', 				array( $this, 'render_search' ) );
 			add_action( 'customize_controls_enqueue_scripts', 	array( $this, 'custom_customize_enqueue' ), 7 );
 			add_action( 'customize_controls_print_scripts', 'ocean_get_svg_icon' );
 			require_once( OCEANWP_INC_DIR . 'customizer/settings/isolation.php' );
 		}
 
+		/**
+		 * Render Tabs
+		 *
+		 * @since 1.0.0
+		 */
+		public function render_search() {
+			remove_action( 'customize_render_panel', array( $this, 'render_search' ) );
+
+			echo "<div id=\"ocean-wp-customize-search\"></div>";
+		}
 
 		/**
-		 * Adds custom controls
+		 * Render Tabs
 		 *
 		 * @since 1.0.0
 		 */
@@ -280,6 +291,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public function customize_panel_init() {
+			wp_enqueue_script( 'oceanwp-customize-search-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.js', array( 'lodash', 'wp-i18n', 'wp-util' ) );
 			wp_enqueue_script( 'oceanwp-customize-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize.js', array( 'jquery' ) );
 			wp_enqueue_style( 'oceanwp-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customize-preview.min.css');
 			wp_localize_script( 'oceanwp-customize-preview', 'oceanwpTG', array(
@@ -326,6 +338,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI .'/assets/fonts/fontawesome/css/all.min.css', false, '5.11.2'  );
 			wp_enqueue_style( 'simple-line-icons', OCEANWP_INC_DIR_URI .'customizer/assets/css/customizer-simple-line-icons.min.css', false, '2.4.0' );
 			wp_enqueue_style( 'oceanwp-general', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/general.min.css' );
+			wp_enqueue_style( 'oceanwp-customize-search', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.css' );
 			wp_enqueue_script( 'oceanwp-general', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/general.min.js', array( 'jquery', 'customize-base' ), false, true );
 
 			if ( is_rtl() ) {
