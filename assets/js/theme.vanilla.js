@@ -152,7 +152,7 @@ var OceanWP = function OceanWP() {
 window.oceanwp = new OceanWP();
 oceanwp.start();
 
-},{"./lib/element":3,"./theme/theme":29,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/defineProperty":40,"@babel/runtime/helpers/interopRequireDefault":43}],3:[function(require,module,exports){
+},{"./lib/element":3,"./theme/theme":29,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/defineProperty":37,"@babel/runtime/helpers/interopRequireDefault":40}],3:[function(require,module,exports){
 "use strict";
 
 Element.prototype.oceanParents = function (selector) {
@@ -390,7 +390,7 @@ var isSelectorValid = function (dummyElement) {
 
 exports.isSelectorValid = isSelectorValid;
 
-},{"@babel/runtime/helpers/interopRequireDefault":43,"@babel/runtime/helpers/typeof":46}],5:[function(require,module,exports){
+},{"@babel/runtime/helpers/interopRequireDefault":40,"@babel/runtime/helpers/typeof":43}],5:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -430,7 +430,7 @@ var BlogMasonry = function BlogMasonry() {
 
 exports["default"] = BlogMasonry;
 
-},{"../../constants":1,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/defineProperty":40,"@babel/runtime/helpers/interopRequireDefault":43}],6:[function(require,module,exports){
+},{"../../constants":1,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/defineProperty":37,"@babel/runtime/helpers/interopRequireDefault":40}],6:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -450,10 +450,6 @@ var _classPrivateFieldGet2 = _interopRequireDefault(require("@babel/runtime/help
 
 var _responsiveAutoHeight = _interopRequireDefault(require("responsive-auto-height"));
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _executed = /*#__PURE__*/new WeakMap();
 
 var EqualHeightElements = function EqualHeightElements() {
@@ -461,7 +457,7 @@ var EqualHeightElements = function EqualHeightElements() {
 
   (0, _classCallCheck2["default"])(this, EqualHeightElements);
 
-  _classPrivateFieldInitSpec(this, _executed, {
+  _executed.set(this, {
     writable: true,
     value: false
   });
@@ -492,7 +488,7 @@ var EqualHeightElements = function EqualHeightElements() {
 var _default = EqualHeightElements;
 exports["default"] = _default;
 
-},{"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/classPrivateFieldSet":39,"@babel/runtime/helpers/defineProperty":40,"@babel/runtime/helpers/interopRequireDefault":43,"responsive-auto-height":132}],7:[function(require,module,exports){
+},{"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/classPrivateFieldSet":36,"@babel/runtime/helpers/defineProperty":37,"@babel/runtime/helpers/interopRequireDefault":40,"responsive-auto-height":55}],7:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -509,10 +505,6 @@ var _classPrivateFieldSet2 = _interopRequireDefault(require("@babel/runtime/help
 var _classPrivateFieldGet2 = _interopRequireDefault(require("@babel/runtime/helpers/classPrivateFieldGet"));
 
 var _constants = require("../../constants");
-
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
 
 var _lastWindowWidth = /*#__PURE__*/new WeakMap();
 
@@ -539,22 +531,22 @@ var Footer = function Footer() {
 
   (0, _classCallCheck2["default"])(this, Footer);
 
-  _classPrivateFieldInitSpec(this, _lastWindowWidth, {
+  _lastWindowWidth.set(this, {
     writable: true,
     value: void 0
   });
 
-  _classPrivateFieldInitSpec(this, _lastWindowHeight, {
+  _lastWindowHeight.set(this, {
     writable: true,
     value: void 0
   });
 
-  _classPrivateFieldInitSpec(this, _footerPositionState, {
+  _footerPositionState.set(this, {
     writable: true,
     value: null
   });
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       (0, _classPrivateFieldSet2["default"])(_this, _lastWindowWidth, window.innerWidth);
@@ -562,7 +554,7 @@ var Footer = function Footer() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       window.addEventListener("load", (0, _classPrivateFieldGet2["default"])(_this, _onWindowLoad));
@@ -570,7 +562,7 @@ var Footer = function Footer() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onWindowLoad, {
+  _onWindowLoad.set(this, {
     writable: true,
     value: function value(event) {
       (0, _classPrivateFieldGet2["default"])(_this, _fixFooterAtMiddlePage).call(_this);
@@ -579,7 +571,7 @@ var Footer = function Footer() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onWindowResize, {
+  _onWindowResize.set(this, {
     writable: true,
     value: function value(event) {
       (0, _classPrivateFieldGet2["default"])(_this, _fixFooterAtMiddlePage).call(_this);
@@ -592,7 +584,7 @@ var Footer = function Footer() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _fixFooterAtMiddlePage, {
+  _fixFooterAtMiddlePage.set(this, {
     writable: true,
     value: function value() {
       var _DOM$WPAdminbar$offse, _DOM$WPAdminbar, _DOM$footer$footerBar, _DOM$footer$footerBar2;
@@ -625,7 +617,7 @@ var Footer = function Footer() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _fixedFooter, {
+  _fixedFooter.set(this, {
     writable: true,
     value: function value() {
       if (!document.body.classList.contains("has-fixed-footer")) {
@@ -642,7 +634,7 @@ var Footer = function Footer() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _parallaxFooter, {
+  _parallaxFooter.set(this, {
     writable: true,
     value: function value() {
       if (_constants.DOM.body.classList.contains("has-parallax-footer")) {
@@ -673,7 +665,7 @@ var Footer = function Footer() {
 
 exports["default"] = Footer;
 
-},{"../../constants":1,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/classPrivateFieldSet":39,"@babel/runtime/helpers/interopRequireDefault":43}],8:[function(require,module,exports){
+},{"../../constants":1,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/classPrivateFieldSet":36,"@babel/runtime/helpers/interopRequireDefault":40}],8:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -689,10 +681,6 @@ var _classPrivateFieldGet2 = _interopRequireDefault(require("@babel/runtime/help
 
 var _vertical = _interopRequireDefault(require("./header/vertical"));
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _start = /*#__PURE__*/new WeakMap();
 
 var Header = function Header() {
@@ -700,7 +688,7 @@ var Header = function Header() {
 
   (0, _classCallCheck2["default"])(this, Header);
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       _this.vertical = new _vertical["default"]();
@@ -713,7 +701,7 @@ var Header = function Header() {
 var _default = Header;
 exports["default"] = _default;
 
-},{"./header/vertical":9,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/interopRequireDefault":43}],9:[function(require,module,exports){
+},{"./header/vertical":9,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/interopRequireDefault":40}],9:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -733,10 +721,6 @@ var _constants = require("../../../constants");
 
 var _utils = require("../../../lib/utils");
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _menuItemsPlusIcon = /*#__PURE__*/new WeakMap();
 
 var _start = /*#__PURE__*/new WeakMap();
@@ -754,12 +738,12 @@ var VerticalHeader = function VerticalHeader() {
 
   (0, _classCallCheck2["default"])(this, VerticalHeader);
 
-  _classPrivateFieldInitSpec(this, _menuItemsPlusIcon, {
+  _menuItemsPlusIcon.set(this, {
     writable: true,
     value: void 0
   });
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       _constants.DOM.header.vertical.querySelectorAll("li.menu-item-has-children:not(.btn) > a").forEach(function (menuLink) {
@@ -775,7 +759,7 @@ var VerticalHeader = function VerticalHeader() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       (0, _classPrivateFieldGet2["default"])(_this, _menuItemsPlusIcon).forEach(function (menuItemPlusIcon) {
@@ -789,7 +773,7 @@ var VerticalHeader = function VerticalHeader() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onMenuItemPlusIconClick, {
+  _onMenuItemPlusIconClick.set(this, {
     writable: true,
     value: function value(event) {
       event.preventDefault();
@@ -814,7 +798,7 @@ var VerticalHeader = function VerticalHeader() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onToggleMenuBtnClick, {
+  _onToggleMenuBtnClick.set(this, {
     writable: true,
     value: function value(event) {
       event.preventDefault();
@@ -833,7 +817,7 @@ var VerticalHeader = function VerticalHeader() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onDocumentKeydown, {
+  _onDocumentKeydown.set(this, {
     writable: true,
     value: function value(event) {
       var _DOM$header$vertical;
@@ -891,7 +875,7 @@ var VerticalHeader = function VerticalHeader() {
 var _default = VerticalHeader;
 exports["default"] = _default;
 
-},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/classPrivateFieldSet":39,"@babel/runtime/helpers/interopRequireDefault":43}],10:[function(require,module,exports){
+},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/classPrivateFieldSet":36,"@babel/runtime/helpers/interopRequireDefault":40}],10:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -911,10 +895,6 @@ var _fullScreen = _interopRequireDefault(require("./menu/full-screen"));
 
 var _mega = _interopRequireDefault(require("./menu/mega"));
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _start = /*#__PURE__*/new WeakMap();
 
 var _setupEventListeners = /*#__PURE__*/new WeakMap();
@@ -930,7 +910,7 @@ var Menu = function Menu() {
 
   (0, _classCallCheck2["default"])(this, Menu);
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       _this.fullScreen = new _fullScreen["default"]();
@@ -938,7 +918,7 @@ var Menu = function Menu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       document.querySelectorAll("li.nav-no-click > a").forEach(function (noClickMenuItem) {
@@ -954,7 +934,7 @@ var Menu = function Menu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onNoClickMenuItemClick, {
+  _onNoClickMenuItemClick.set(this, {
     writable: true,
     value: function value(event) {
       event.preventDefault();
@@ -962,7 +942,7 @@ var Menu = function Menu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onParentMenuItemMouseenter, {
+  _onParentMenuItemMouseenter.set(this, {
     writable: true,
     value: function value(event) {
       var parentMenuItem = event.currentTarget;
@@ -972,7 +952,7 @@ var Menu = function Menu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onParentMenuItemMouseleave, {
+  _onParentMenuItemMouseleave.set(this, {
     writable: true,
     value: function value(event) {
       var parentMenuItem = event.currentTarget;
@@ -994,7 +974,7 @@ var Menu = function Menu() {
 var _default = Menu;
 exports["default"] = _default;
 
-},{"../../lib/utils":4,"./menu/full-screen":11,"./menu/mega":12,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/interopRequireDefault":43}],11:[function(require,module,exports){
+},{"../../lib/utils":4,"./menu/full-screen":11,"./menu/mega":12,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/interopRequireDefault":40}],11:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -1011,10 +991,6 @@ var _classPrivateFieldGet2 = _interopRequireDefault(require("@babel/runtime/help
 var _constants = require("../../../constants");
 
 var _utils = require("../../../lib/utils");
-
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
 
 var _start = /*#__PURE__*/new WeakMap();
 
@@ -1037,7 +1013,7 @@ var FullScreenMenu = function FullScreenMenu() {
 
   (0, _classCallCheck2["default"])(this, FullScreenMenu);
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       _constants.DOM.menu.fullScreen.menu.querySelectorAll(".nav-arrow").forEach(function (plusBtn) {
@@ -1046,7 +1022,7 @@ var FullScreenMenu = function FullScreenMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       var _document$querySelect;
@@ -1064,7 +1040,7 @@ var FullScreenMenu = function FullScreenMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onToggleMenuBtnClick, {
+  _onToggleMenuBtnClick.set(this, {
     writable: true,
     value: function value(event) {
       event.preventDefault();
@@ -1078,7 +1054,7 @@ var FullScreenMenu = function FullScreenMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onMenuLinkClick, {
+  _onMenuLinkClick.set(this, {
     writable: true,
     value: function value(event) {
       event.preventDefault();
@@ -1097,14 +1073,14 @@ var FullScreenMenu = function FullScreenMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onMenuHashtagLinkClick, {
+  _onMenuHashtagLinkClick.set(this, {
     writable: true,
     value: function value(event) {
       (0, _classPrivateFieldGet2["default"])(_this, _closeMenu).call(_this);
     }
   });
 
-  _classPrivateFieldInitSpec(this, _openMenu, {
+  _openMenu.set(this, {
     writable: true,
     value: function value() {
       var _DOM$menu$fullScreen$;
@@ -1125,7 +1101,7 @@ var FullScreenMenu = function FullScreenMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _closeMenu, {
+  _closeMenu.set(this, {
     writable: true,
     value: function value() {
       var _DOM$menu$fullScreen$2;
@@ -1150,7 +1126,7 @@ var FullScreenMenu = function FullScreenMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onDocumentKeydown, {
+  _onDocumentKeydown.set(this, {
     writable: true,
     value: function value(event) {
       var _DOM$menu$fullScreen$3;
@@ -1211,7 +1187,7 @@ var FullScreenMenu = function FullScreenMenu() {
 var _default = FullScreenMenu;
 exports["default"] = _default;
 
-},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/interopRequireDefault":43}],12:[function(require,module,exports){
+},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/interopRequireDefault":40}],12:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -1229,10 +1205,6 @@ var _constants = require("../../../constants");
 
 var _utils = require("../../../lib/utils");
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _start = /*#__PURE__*/new WeakMap();
 
 var _setupEventListeners = /*#__PURE__*/new WeakMap();
@@ -1248,7 +1220,7 @@ var MegaMenu = function MegaMenu() {
 
   (0, _classCallCheck2["default"])(this, MegaMenu);
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       _constants.DOM.menu.mega.menuContents.forEach(function (menuContent) {
@@ -1282,7 +1254,7 @@ var MegaMenu = function MegaMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       _constants.DOM.menu.mega.menuItems.forEach(function (menuItem) {
@@ -1296,7 +1268,7 @@ var MegaMenu = function MegaMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onMenuItemMouseEnter, {
+  _onMenuItemMouseEnter.set(this, {
     writable: true,
     value: function value(event) {
       var wrapper = _constants.DOM.header.site.classList.contains("medium-header") ? document.querySelector("#site-navigation-wrap > .container") : document.querySelector("#site-header-inner");
@@ -1304,7 +1276,7 @@ var MegaMenu = function MegaMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onTopbarMenuItemMouseEnter, {
+  _onTopbarMenuItemMouseEnter.set(this, {
     writable: true,
     value: function value(event) {
       var wrapper = _constants.DOM.header.topbar;
@@ -1312,7 +1284,7 @@ var MegaMenu = function MegaMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _menuItemMouseEnter, {
+  _menuItemMouseEnter.set(this, {
     writable: true,
     value: function value(wrapper, event) {
       var menuItem = event.currentTarget;
@@ -1339,7 +1311,7 @@ var MegaMenu = function MegaMenu() {
 var _default = MegaMenu;
 exports["default"] = _default;
 
-},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/interopRequireDefault":43}],13:[function(require,module,exports){
+},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/interopRequireDefault":40}],13:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -1359,10 +1331,6 @@ var _fullScreen = _interopRequireDefault(require("./mobile-menu/full-screen"));
 
 var _sidebar = _interopRequireDefault(require("./mobile-menu/sidebar"));
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _start = /*#__PURE__*/new WeakMap();
 
 var MobileMenu = function MobileMenu() {
@@ -1370,7 +1338,7 @@ var MobileMenu = function MobileMenu() {
 
   (0, _classCallCheck2["default"])(this, MobileMenu);
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       _this.dropDown = new _dropDown["default"]();
@@ -1385,7 +1353,7 @@ var MobileMenu = function MobileMenu() {
 var _default = MobileMenu;
 exports["default"] = _default;
 
-},{"./mobile-menu/drop-down":14,"./mobile-menu/full-screen":15,"./mobile-menu/sidebar":16,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/interopRequireDefault":43}],14:[function(require,module,exports){
+},{"./mobile-menu/drop-down":14,"./mobile-menu/full-screen":15,"./mobile-menu/sidebar":16,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/interopRequireDefault":40}],14:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -1406,10 +1374,6 @@ var _delegate = _interopRequireDefault(require("delegate"));
 var _constants = require("../../../constants");
 
 var _utils = require("../../../lib/utils");
-
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
 
 var _isMenuOpen = /*#__PURE__*/new WeakMap();
 
@@ -1436,17 +1400,17 @@ var DropDownMobileMenu = function DropDownMobileMenu() {
 
   (0, _classCallCheck2["default"])(this, DropDownMobileMenu);
 
-  _classPrivateFieldInitSpec(this, _isMenuOpen, {
+  _isMenuOpen.set(this, {
     writable: true,
     value: void 0
   });
 
-  _classPrivateFieldInitSpec(this, _menuItemsToggleIcon, {
+  _menuItemsToggleIcon.set(this, {
     writable: true,
     value: void 0
   });
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       var _DOM$mobileMenu$menuI, _DOM$mobileMenu$navWr, _DOM$mobileMenu$navWr2;
@@ -1462,7 +1426,7 @@ var DropDownMobileMenu = function DropDownMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       var _DOM$mobileMenu$navWr3, _DOM$mobileMenu$navWr4, _DOM$mobileMenu$hambu, _classPrivateFieldGet2;
@@ -1484,7 +1448,7 @@ var DropDownMobileMenu = function DropDownMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onToggleMenuButtonClick, {
+  _onToggleMenuButtonClick.set(this, {
     writable: true,
     value: function value(event) {
       var _DOM$mobileMenu$toggl, _DOM$mobileMenu$hambu2, _DOM$mobileMenu$toggl2;
@@ -1498,7 +1462,7 @@ var DropDownMobileMenu = function DropDownMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onMenuCloseClick, {
+  _onMenuCloseClick.set(this, {
     writable: true,
     value: function value(event) {
       var _DOM$mobileMenu$toggl3, _DOM$mobileMenu$hambu3;
@@ -1509,7 +1473,7 @@ var DropDownMobileMenu = function DropDownMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onWindowResize, {
+  _onWindowResize.set(this, {
     writable: true,
     value: function value(event) {
       if (window.innerWidth >= 960) {
@@ -1518,7 +1482,7 @@ var DropDownMobileMenu = function DropDownMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onHamburgerClick, {
+  _onHamburgerClick.set(this, {
     writable: true,
     value: function value(event) {
       (0, _classPrivateFieldSet2["default"])(_this, _isMenuOpen, !(0, _classPrivateFieldGet3["default"])(_this, _isMenuOpen));
@@ -1526,7 +1490,7 @@ var DropDownMobileMenu = function DropDownMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onMenuItemPlusIconClick, {
+  _onMenuItemPlusIconClick.set(this, {
     writable: true,
     value: function value(event) {
       event.preventDefault();
@@ -1551,7 +1515,7 @@ var DropDownMobileMenu = function DropDownMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onDocumentKeydown, {
+  _onDocumentKeydown.set(this, {
     writable: true,
     value: function value(event) {
       var _DOM$mobileMenu$toggl4, _DOM$mobileMenu$nav;
@@ -1613,7 +1577,7 @@ var DropDownMobileMenu = function DropDownMobileMenu() {
 var _default = DropDownMobileMenu;
 exports["default"] = _default;
 
-},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/classPrivateFieldSet":39,"@babel/runtime/helpers/interopRequireDefault":43,"delegate":122}],15:[function(require,module,exports){
+},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/classPrivateFieldSet":36,"@babel/runtime/helpers/interopRequireDefault":40,"delegate":45}],15:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -1632,10 +1596,6 @@ var _delegate = _interopRequireDefault(require("delegate"));
 var _constants = require("../../../constants");
 
 var _utils = require("../../../lib/utils");
-
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
 
 var _start = /*#__PURE__*/new WeakMap();
 
@@ -1658,7 +1618,7 @@ var FullScreenMobileMenu = function FullScreenMobileMenu() {
 
   (0, _classCallCheck2["default"])(this, FullScreenMobileMenu);
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       var _DOM$mobileMenu$fullS, _DOM$mobileMenu$fullS2;
@@ -1669,7 +1629,7 @@ var FullScreenMobileMenu = function FullScreenMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       window.addEventListener("resize", (0, _classPrivateFieldGet2["default"])(_this, _onWindowResize));
@@ -1685,7 +1645,7 @@ var FullScreenMobileMenu = function FullScreenMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onMenuButtonClick, {
+  _onMenuButtonClick.set(this, {
     writable: true,
     value: function value(event) {
       var _DOM$mobileMenu$hambu;
@@ -1708,7 +1668,7 @@ var FullScreenMobileMenu = function FullScreenMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onCloseIconClick, {
+  _onCloseIconClick.set(this, {
     writable: true,
     value: function value(event) {
       if (event.currentTarget.getAttribute("href").substring(0, 1) === "#") {
@@ -1719,7 +1679,7 @@ var FullScreenMobileMenu = function FullScreenMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _closeMenu, {
+  _closeMenu.set(this, {
     writable: true,
     value: function value() {
       if ((0, _utils.visible)(_constants.DOM.mobileMenu.fullScreen)) {
@@ -1743,7 +1703,7 @@ var FullScreenMobileMenu = function FullScreenMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onWindowResize, {
+  _onWindowResize.set(this, {
     writable: true,
     value: function value(event) {
       if (window.innerWidth >= 960) {
@@ -1752,7 +1712,7 @@ var FullScreenMobileMenu = function FullScreenMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onDropownToggleIcon, {
+  _onDropownToggleIcon.set(this, {
     writable: true,
     value: function value(event) {
       event.preventDefault();
@@ -1771,7 +1731,7 @@ var FullScreenMobileMenu = function FullScreenMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onDocumentKeydown, {
+  _onDocumentKeydown.set(this, {
     writable: true,
     value: function value(event) {
       var _DOM$mobileMenu$fullS3;
@@ -1833,7 +1793,7 @@ var FullScreenMobileMenu = function FullScreenMobileMenu() {
 var _default = FullScreenMobileMenu;
 exports["default"] = _default;
 
-},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/interopRequireDefault":43,"delegate":122}],16:[function(require,module,exports){
+},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/interopRequireDefault":40,"delegate":45}],16:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -1854,10 +1814,6 @@ var _delegate = _interopRequireDefault(require("delegate"));
 var _constants = require("../../../constants");
 
 var _utils = require("../../../lib/utils");
-
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
 
 var _isMenuOpen = /*#__PURE__*/new WeakMap();
 
@@ -1888,22 +1844,22 @@ var SidebarMobileMenu = function SidebarMobileMenu() {
 
   (0, _classCallCheck2["default"])(this, SidebarMobileMenu);
 
-  _classPrivateFieldInitSpec(this, _isMenuOpen, {
+  _isMenuOpen.set(this, {
     writable: true,
     value: void 0
   });
 
-  _classPrivateFieldInitSpec(this, _menuItemsPlusIcon, {
+  _menuItemsPlusIcon.set(this, {
     writable: true,
     value: void 0
   });
 
-  _classPrivateFieldInitSpec(this, _sidebarToggleMenuBtn, {
+  _sidebarToggleMenuBtn.set(this, {
     writable: true,
     value: void 0
   });
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       (0, _classPrivateFieldSet2["default"])(_this, _isMenuOpen, false);
@@ -1919,7 +1875,7 @@ var SidebarMobileMenu = function SidebarMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _startSidrPlugin, {
+  _startSidrPlugin.set(this, {
     writable: true,
     value: function value() {
       sidr["new"](".mobile-menu", {
@@ -1974,7 +1930,7 @@ var SidebarMobileMenu = function SidebarMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       var _DOM$mobileMenu$hambu3, _classPrivateFieldGet2, _classPrivateFieldGet3, _document$querySelect;
@@ -1998,7 +1954,7 @@ var SidebarMobileMenu = function SidebarMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onHamburgerBtnClick, {
+  _onHamburgerBtnClick.set(this, {
     writable: true,
     value: function value(event) {
       (0, _classPrivateFieldSet2["default"])(_this, _isMenuOpen, !(0, _classPrivateFieldGet4["default"])(_this, _isMenuOpen));
@@ -2006,7 +1962,7 @@ var SidebarMobileMenu = function SidebarMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onSidebarCloseMenuBtnClick, {
+  _onSidebarCloseMenuBtnClick.set(this, {
     writable: true,
     value: function value(event) {
       event.preventDefault();
@@ -2016,7 +1972,7 @@ var SidebarMobileMenu = function SidebarMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onMenuItemPlusIconClick, {
+  _onMenuItemPlusIconClick.set(this, {
     writable: true,
     value: function value(event) {
       event.preventDefault();
@@ -2041,7 +1997,7 @@ var SidebarMobileMenu = function SidebarMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onWindowResize, {
+  _onWindowResize.set(this, {
     writable: true,
     value: function value(event) {
       if (window.innerWidth >= 960) {
@@ -2050,7 +2006,7 @@ var SidebarMobileMenu = function SidebarMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onDocumentKeydown, {
+  _onDocumentKeydown.set(this, {
     writable: true,
     value: function value(event) {
       if (!_constants.DOM.body.classList.contains("sidr-open")) {
@@ -2097,7 +2053,7 @@ var SidebarMobileMenu = function SidebarMobileMenu() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _closeSidr, {
+  _closeSidr.set(this, {
     writable: true,
     value: function value() {
       var _DOM$mobileMenu$hambu4;
@@ -2116,7 +2072,7 @@ var SidebarMobileMenu = function SidebarMobileMenu() {
 var _default = SidebarMobileMenu;
 exports["default"] = _default;
 
-},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/classPrivateFieldSet":39,"@babel/runtime/helpers/interopRequireDefault":43,"delegate":122}],17:[function(require,module,exports){
+},{"../../../constants":1,"../../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/classPrivateFieldSet":36,"@babel/runtime/helpers/interopRequireDefault":40,"delegate":45}],17:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2138,10 +2094,6 @@ var _utils = require("../../lib/utils");
 
 var _infiniteScroll2 = _interopRequireDefault(require("infinite-scroll"));
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _infiniteScroll = /*#__PURE__*/new WeakMap();
 
 var _start = /*#__PURE__*/new WeakMap();
@@ -2153,12 +2105,12 @@ var OWInfiniteScroll = function OWInfiniteScroll() {
 
   (0, _classCallCheck2["default"])(this, OWInfiniteScroll);
 
-  _classPrivateFieldInitSpec(this, _infiniteScroll, {
+  _infiniteScroll.set(this, {
     writable: true,
     value: void 0
   });
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       (0, _classPrivateFieldSet2["default"])(_this, _infiniteScroll, new _infiniteScroll2["default"](_constants.DOM.scroll.infiniteScrollWrapper, {
@@ -2173,7 +2125,7 @@ var OWInfiniteScroll = function OWInfiniteScroll() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       (0, _classPrivateFieldGet2["default"])(_this, _infiniteScroll).on("load", function (body, path, response) {
@@ -2243,7 +2195,7 @@ var OWInfiniteScroll = function OWInfiniteScroll() {
 var _default = OWInfiniteScroll;
 exports["default"] = _default;
 
-},{"../../constants":1,"../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/classPrivateFieldSet":39,"@babel/runtime/helpers/interopRequireDefault":43,"infinite-scroll":128}],18:[function(require,module,exports){
+},{"../../constants":1,"../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/classPrivateFieldSet":36,"@babel/runtime/helpers/interopRequireDefault":40,"infinite-scroll":49}],18:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2260,10 +2212,6 @@ var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/de
 var _classPrivateFieldGet2 = _interopRequireDefault(require("@babel/runtime/helpers/classPrivateFieldGet"));
 
 var _constants = require("../../constants");
-
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
 
 var _addLightboxClass = /*#__PURE__*/new WeakMap();
 
@@ -2317,7 +2265,7 @@ var OWLightbox = function OWLightbox() {
     });
   });
 
-  _classPrivateFieldInitSpec(this, _addLightboxClass, {
+  _addLightboxClass.set(this, {
     writable: true,
     value: function value() {
       var _document$querySelect2;
@@ -2348,7 +2296,7 @@ var OWLightbox = function OWLightbox() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _imageFormats, {
+  _imageFormats.set(this, {
     writable: true,
     value: function value() {
       return ["bmp", "gif", "jpeg", "jpg", "png", "tiff", "tif", "jfif", "jpe", "svg", "mp4", "ogg", "webm"];
@@ -2361,7 +2309,7 @@ var OWLightbox = function OWLightbox() {
 var _default = OWLightbox;
 exports["default"] = _default;
 
-},{"../../constants":1,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/defineProperty":40,"@babel/runtime/helpers/interopRequireDefault":43}],19:[function(require,module,exports){
+},{"../../constants":1,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/defineProperty":37,"@babel/runtime/helpers/interopRequireDefault":40}],19:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2410,7 +2358,7 @@ var OWSlider = function OWSlider() {
 var _default = OWSlider;
 exports["default"] = _default;
 
-},{"../../constants":1,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/defineProperty":40,"@babel/runtime/helpers/interopRequireDefault":43}],20:[function(require,module,exports){
+},{"../../constants":1,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/defineProperty":37,"@babel/runtime/helpers/interopRequireDefault":40}],20:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2454,7 +2402,7 @@ var ScrollEffect = function ScrollEffect() {
     value: 0
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       document.querySelectorAll('a[href*="#"]:not([href="#"]), a.local[href*="#"]:not([href="#"]), .local a[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"]), a.sidr-class-menu-link[href*="#"]:not([href="#"])').forEach(function (scrollItem) {
@@ -2463,7 +2411,7 @@ var ScrollEffect = function ScrollEffect() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onScrollItemClick, {
+  _onScrollItemClick.set(this, {
     writable: true,
     value: function value(event) {
       var scrollItem = event.currentTarget;
@@ -2503,21 +2451,21 @@ var ScrollEffect = function ScrollEffect() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _getAdminBarHeight, {
+  _getAdminBarHeight.set(this, {
     writable: true,
     value: function value() {
       return !!_constants.DOM.WPAdminbar ? _constants.DOM.WPAdminbar.offsetHeight : 0;
     }
   });
 
-  _classPrivateFieldInitSpec(this, _getTopbarHeight, {
+  _getTopbarHeight.set(this, {
     writable: true,
     value: function value() {
       return !!_constants.DOM.header.topbarWrapper && _constants.DOM.header.topbarWrapper.classList.contains("top-bar-sticky") ? _constants.DOM.header.topbarWrapper.offsetHeight : 0;
     }
   });
 
-  _classPrivateFieldInitSpec(this, _getStickyHeaderHeight, {
+  _getStickyHeaderHeight.set(this, {
     writable: true,
     value: function value() {
       var _document$querySelect3;
@@ -2577,7 +2525,7 @@ var ScrollEffect = function ScrollEffect() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _fixMultiMenu, {
+  _fixMultiMenu.set(this, {
     writable: true,
     value: function value(event, targetElem) {
       var fixedOffset = (0, _utils.offset)(targetElem).top - (0, _classPrivateFieldGet2["default"])(_this, _getAdminBarHeight).call(_this) - (0, _classPrivateFieldGet2["default"])(_this, _getTopbarHeight).call(_this) - (0, _classPrivateFieldGet2["default"])(_this, _getStickyHeaderHeight).call(_this, true);
@@ -2611,7 +2559,7 @@ var ScrollEffect = function ScrollEffect() {
 var _default = ScrollEffect;
 exports["default"] = _default;
 
-},{"../../constants":1,"../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/classPrivateFieldSet":39,"@babel/runtime/helpers/interopRequireDefault":43}],21:[function(require,module,exports){
+},{"../../constants":1,"../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/classPrivateFieldSet":36,"@babel/runtime/helpers/interopRequireDefault":40}],21:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2629,10 +2577,6 @@ var _constants = require("../../constants");
 
 var _utils = require("../../lib/utils");
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _start = /*#__PURE__*/new WeakMap();
 
 var _setupEventListeners = /*#__PURE__*/new WeakMap();
@@ -2646,12 +2590,12 @@ var ScrollTop = function ScrollTop() {
 
   (0, _classCallCheck2["default"])(this, ScrollTop);
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {}
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       var _DOM$scroll$scrollTop, _DOM$scroll$goTop, _DOM$scroll$goTopSlas;
@@ -2663,7 +2607,7 @@ var ScrollTop = function ScrollTop() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onWindowScroll, {
+  _onWindowScroll.set(this, {
     writable: true,
     value: function value(event) {
       if (!_constants.DOM.scroll.scrollTop) {
@@ -2680,7 +2624,7 @@ var ScrollTop = function ScrollTop() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onScrollTopClick, {
+  _onScrollTopClick.set(this, {
     writable: true,
     value: function value(event) {
       var _scrollTop$parentNode;
@@ -2703,7 +2647,7 @@ var ScrollTop = function ScrollTop() {
 
 exports["default"] = ScrollTop;
 
-},{"../../constants":1,"../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/interopRequireDefault":43}],22:[function(require,module,exports){
+},{"../../constants":1,"../../lib/utils":4,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/interopRequireDefault":40}],22:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2729,10 +2673,6 @@ var _mobileSearchIcon = _interopRequireDefault(require("./search/mobile-search-i
 
 var _overlay = _interopRequireDefault(require("./search/overlay"));
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _start = /*#__PURE__*/new WeakMap();
 
 var _setupEventListeners = /*#__PURE__*/new WeakMap();
@@ -2745,7 +2685,7 @@ var Search = function Search() {
   (0, _classCallCheck2["default"])(this, Search);
   (0, _defineProperty2["default"])(this, "mobileOverlayInput", void 0);
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       var _this$mobileOverlayIn;
@@ -2770,7 +2710,7 @@ var Search = function Search() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       var _this$mobileOverlayIn2, _this$mobileOverlayIn3;
@@ -2787,7 +2727,7 @@ var Search = function Search() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onInputKeyup, {
+  _onInputKeyup.set(this, {
     writable: true,
     value: function value(event) {
       var input = event.currentTarget;
@@ -2808,7 +2748,7 @@ var Search = function Search() {
 var _default = Search;
 exports["default"] = _default;
 
-},{"../../constants":1,"./search/drop-down":24,"./search/header-replace":25,"./search/mobile-search-icon":26,"./search/overlay":27,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/defineProperty":40,"@babel/runtime/helpers/interopRequireDefault":43}],23:[function(require,module,exports){
+},{"../../constants":1,"./search/drop-down":24,"./search/header-replace":25,"./search/mobile-search-icon":26,"./search/overlay":27,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/defineProperty":37,"@babel/runtime/helpers/interopRequireDefault":40}],23:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2839,7 +2779,7 @@ var SearchBase = function SearchBase() {
 var _default = SearchBase;
 exports["default"] = _default;
 
-},{"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/defineProperty":40,"@babel/runtime/helpers/interopRequireDefault":43}],24:[function(require,module,exports){
+},{"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/defineProperty":37,"@babel/runtime/helpers/interopRequireDefault":40}],24:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2869,10 +2809,6 @@ function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflec
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _setupEventListeners = /*#__PURE__*/new WeakMap();
 
 var _onToggleSearchBtnClick = /*#__PURE__*/new WeakMap();
@@ -2890,7 +2826,7 @@ var DropDownSearch = /*#__PURE__*/function (_SearchBase) {
     (0, _classCallCheck2["default"])(this, DropDownSearch);
     _this = _super.call(this);
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _setupEventListeners, {
+    _setupEventListeners.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value() {
         var _DOM$search$dropDown$;
@@ -2900,7 +2836,7 @@ var DropDownSearch = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _onToggleSearchBtnClick, {
+    _onToggleSearchBtnClick.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         event.preventDefault();
@@ -2915,7 +2851,7 @@ var DropDownSearch = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _onDocumentClick, {
+    _onDocumentClick.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         // Collaps search form
@@ -2942,7 +2878,7 @@ var DropDownSearch = /*#__PURE__*/function (_SearchBase) {
 var _default = DropDownSearch;
 exports["default"] = _default;
 
-},{"../../../constants":1,"./base":23,"@babel/runtime/helpers/assertThisInitialized":36,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/getPrototypeOf":41,"@babel/runtime/helpers/inherits":42,"@babel/runtime/helpers/interopRequireDefault":43,"@babel/runtime/helpers/possibleConstructorReturn":44}],25:[function(require,module,exports){
+},{"../../../constants":1,"./base":23,"@babel/runtime/helpers/assertThisInitialized":30,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/getPrototypeOf":38,"@babel/runtime/helpers/inherits":39,"@babel/runtime/helpers/interopRequireDefault":40,"@babel/runtime/helpers/possibleConstructorReturn":41}],25:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2972,10 +2908,6 @@ function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflec
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _setupEventListeners = /*#__PURE__*/new WeakMap();
 
 var _onToggleSearchBtnClick = /*#__PURE__*/new WeakMap();
@@ -2997,7 +2929,7 @@ var HeaderReplaceSearch = /*#__PURE__*/function (_SearchBase) {
     (0, _classCallCheck2["default"])(this, HeaderReplaceSearch);
     _this = _super.call(this);
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _setupEventListeners, {
+    _setupEventListeners.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value() {
         var _DOM$search$headerRep, _DOM$search$headerRep2;
@@ -3008,7 +2940,7 @@ var HeaderReplaceSearch = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _onToggleSearchBtnClick, {
+    _onToggleSearchBtnClick.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         event.preventDefault();
@@ -3036,7 +2968,7 @@ var HeaderReplaceSearch = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _onCloseBtnClick, {
+    _onCloseBtnClick.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         event.preventDefault();
@@ -3057,7 +2989,7 @@ var HeaderReplaceSearch = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _onDocumentClick, {
+    _onDocumentClick.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         // Collaps search form
@@ -3080,7 +3012,7 @@ var HeaderReplaceSearch = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _hasTopHeader, {
+    _hasTopHeader.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value() {
         var _DOM$header$site;
@@ -3103,7 +3035,7 @@ var HeaderReplaceSearch = /*#__PURE__*/function (_SearchBase) {
 var _default = HeaderReplaceSearch;
 exports["default"] = _default;
 
-},{"../../../constants":1,"./base":23,"@babel/runtime/helpers/assertThisInitialized":36,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/getPrototypeOf":41,"@babel/runtime/helpers/inherits":42,"@babel/runtime/helpers/interopRequireDefault":43,"@babel/runtime/helpers/possibleConstructorReturn":44}],26:[function(require,module,exports){
+},{"../../../constants":1,"./base":23,"@babel/runtime/helpers/assertThisInitialized":30,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/getPrototypeOf":38,"@babel/runtime/helpers/inherits":39,"@babel/runtime/helpers/interopRequireDefault":40,"@babel/runtime/helpers/possibleConstructorReturn":41}],26:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -3137,10 +3069,6 @@ function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflec
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _elements = /*#__PURE__*/new WeakMap();
 
 var _setElements = /*#__PURE__*/new WeakMap();
@@ -3168,12 +3096,12 @@ var MobileSearchIcon = /*#__PURE__*/function (_SearchBase) {
     (0, _classCallCheck2["default"])(this, MobileSearchIcon);
     _this = _super.call(this);
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _elements, {
+    _elements.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: void 0
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _setElements, {
+    _setElements.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value() {
         (0, _classPrivateFieldSet2["default"])((0, _assertThisInitialized2["default"])(_this), _elements, {
@@ -3187,7 +3115,7 @@ var MobileSearchIcon = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _setupEventListeners, {
+    _setupEventListeners.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value() {
         if (_constants.options.mobileMenuSearchStyle === "drop_down") {
@@ -3205,7 +3133,7 @@ var MobileSearchIcon = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _toggleDropdownSearch, {
+    _toggleDropdownSearch.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         event.preventDefault();
@@ -3217,7 +3145,7 @@ var MobileSearchIcon = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _openOverlaySearch, {
+    _openOverlaySearch.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         event.preventDefault();
@@ -3232,7 +3160,7 @@ var MobileSearchIcon = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _closeOverlaySearch, {
+    _closeOverlaySearch.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         event.preventDefault();
@@ -3244,14 +3172,14 @@ var MobileSearchIcon = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _onClickOverlaySearch, {
+    _onClickOverlaySearch.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         (0, _classPrivateFieldGet6["default"])((0, _assertThisInitialized2["default"])(_this), _elements).overlaySearch.querySelector("input").focus();
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _onClickDocument, {
+    _onClickDocument.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         if (!event.target.closest("#icon-searchform-dropdown.show")) {
@@ -3276,7 +3204,7 @@ var MobileSearchIcon = /*#__PURE__*/function (_SearchBase) {
 var _default = MobileSearchIcon;
 exports["default"] = _default;
 
-},{"../../../constants":1,"../../../lib/utils":4,"./base":23,"@babel/runtime/helpers/assertThisInitialized":36,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/classPrivateFieldSet":39,"@babel/runtime/helpers/getPrototypeOf":41,"@babel/runtime/helpers/inherits":42,"@babel/runtime/helpers/interopRequireDefault":43,"@babel/runtime/helpers/possibleConstructorReturn":44}],27:[function(require,module,exports){
+},{"../../../constants":1,"../../../lib/utils":4,"./base":23,"@babel/runtime/helpers/assertThisInitialized":30,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/classPrivateFieldSet":36,"@babel/runtime/helpers/getPrototypeOf":38,"@babel/runtime/helpers/inherits":39,"@babel/runtime/helpers/interopRequireDefault":40,"@babel/runtime/helpers/possibleConstructorReturn":41}],27:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -3308,10 +3236,6 @@ function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflec
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _setupEventListeners = /*#__PURE__*/new WeakMap();
 
 var _onToggleSearchBtnClick = /*#__PURE__*/new WeakMap();
@@ -3329,7 +3253,7 @@ var OverlaySearch = /*#__PURE__*/function (_SearchBase) {
     (0, _classCallCheck2["default"])(this, OverlaySearch);
     _this = _super.call(this);
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _setupEventListeners, {
+    _setupEventListeners.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value() {
         var _DOM$search$overlay$t, _DOM$search$overlay$c;
@@ -3339,7 +3263,7 @@ var OverlaySearch = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _onToggleSearchBtnClick, {
+    _onToggleSearchBtnClick.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         event.preventDefault();
@@ -3355,7 +3279,7 @@ var OverlaySearch = /*#__PURE__*/function (_SearchBase) {
       }
     });
 
-    _classPrivateFieldInitSpec((0, _assertThisInitialized2["default"])(_this), _onCloseBtnClick, {
+    _onCloseBtnClick.set((0, _assertThisInitialized2["default"])(_this), {
       writable: true,
       value: function value(event) {
         event.preventDefault();
@@ -3382,7 +3306,7 @@ var OverlaySearch = /*#__PURE__*/function (_SearchBase) {
 var _default = OverlaySearch;
 exports["default"] = _default;
 
-},{"../../../constants":1,"../../../lib/utils":4,"./base":23,"@babel/runtime/helpers/assertThisInitialized":36,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/getPrototypeOf":41,"@babel/runtime/helpers/inherits":42,"@babel/runtime/helpers/interopRequireDefault":43,"@babel/runtime/helpers/possibleConstructorReturn":44}],28:[function(require,module,exports){
+},{"../../../constants":1,"../../../lib/utils":4,"./base":23,"@babel/runtime/helpers/assertThisInitialized":30,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/getPrototypeOf":38,"@babel/runtime/helpers/inherits":39,"@babel/runtime/helpers/interopRequireDefault":40,"@babel/runtime/helpers/possibleConstructorReturn":41}],28:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -3401,10 +3325,6 @@ var _classPrivateFieldSet2 = _interopRequireDefault(require("@babel/runtime/help
 var _classPrivateFieldGet2 = _interopRequireDefault(require("@babel/runtime/helpers/classPrivateFieldGet"));
 
 var _constants = require("../../constants");
-
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
 
 var _select = /*#__PURE__*/new WeakMap();
 
@@ -3427,12 +3347,12 @@ var Select = function Select() {
 
   (0, _classCallCheck2["default"])(this, Select);
 
-  _classPrivateFieldInitSpec(this, _select, {
+  _select.set(this, {
     writable: true,
     value: void 0
   });
 
-  _classPrivateFieldInitSpec(this, _render, {
+  _render.set(this, {
     writable: true,
     value: function value() {
       _constants.DOM.selectTags.forEach(function (select) {
@@ -3445,7 +3365,7 @@ var Select = function Select() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _style, {
+  _style.set(this, {
     writable: true,
     value: function value() {
       (0, _classPrivateFieldGet2["default"])(_this, _select).style.opacity = 0;
@@ -3458,7 +3378,7 @@ var Select = function Select() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListenersItem, {
+  _setupEventListenersItem.set(this, {
     writable: true,
     value: function value() {
       (0, _classPrivateFieldGet2["default"])(_this, _select).addEventListener("mouseenter", (0, _classPrivateFieldGet2["default"])(_this, _onMouseenter));
@@ -3467,7 +3387,7 @@ var Select = function Select() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onMouseenter, {
+  _onMouseenter.set(this, {
     writable: true,
     value: function value(event) {
       var select = event.currentTarget;
@@ -3475,7 +3395,7 @@ var Select = function Select() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onMouseleave, {
+  _onMouseleave.set(this, {
     writable: true,
     value: function value(event) {
       var select = event.currentTarget;
@@ -3488,7 +3408,7 @@ var Select = function Select() {
     select.nextSibling.innerHTML = select.options[select.selectedIndex].text;
   });
 
-  _classPrivateFieldInitSpec(this, _setupEventListeners, {
+  _setupEventListeners.set(this, {
     writable: true,
     value: function value() {
       document.addEventListener("DOMContentLoaded", (0, _classPrivateFieldGet2["default"])(_this, _onDocumentReady));
@@ -3496,7 +3416,7 @@ var Select = function Select() {
     }
   });
 
-  _classPrivateFieldInitSpec(this, _onDocumentReady, {
+  _onDocumentReady.set(this, {
     writable: true,
     value: function value(event) {
       _constants.DOM.selectTags.forEach(function (select) {
@@ -3511,7 +3431,7 @@ var Select = function Select() {
 
 exports["default"] = Select;
 
-},{"../../constants":1,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/classPrivateFieldSet":39,"@babel/runtime/helpers/defineProperty":40,"@babel/runtime/helpers/interopRequireDefault":43}],29:[function(require,module,exports){
+},{"../../constants":1,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/classPrivateFieldSet":36,"@babel/runtime/helpers/defineProperty":37,"@babel/runtime/helpers/interopRequireDefault":40}],29:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -3551,10 +3471,6 @@ var _owSlider = _interopRequireDefault(require("./components/ow-slider"));
 
 var _owLightbox = _interopRequireDefault(require("./components/ow-lightbox"));
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
 var _start = /*#__PURE__*/new WeakMap();
 
 var Theme = function Theme() {
@@ -3562,7 +3478,7 @@ var Theme = function Theme() {
 
   (0, _classCallCheck2["default"])(this, Theme);
 
-  _classPrivateFieldInitSpec(this, _start, {
+  _start.set(this, {
     writable: true,
     value: function value() {
       _this.select = new _select["default"]();
@@ -3589,19 +3505,7 @@ var Theme = function Theme() {
 var _default = Theme;
 exports["default"] = _default;
 
-},{"./components/blog-masonry":5,"./components/equal-height-elements":6,"./components/footer":7,"./components/header":8,"./components/menu":10,"./components/mobile-menu":13,"./components/ow-infinite-scroll":17,"./components/ow-lightbox":18,"./components/ow-slider":19,"./components/scroll-effect":20,"./components/scroll-top":21,"./components/search":22,"./components/select":28,"@babel/runtime/helpers/classCallCheck":37,"@babel/runtime/helpers/classPrivateFieldGet":38,"@babel/runtime/helpers/interopRequireDefault":43}],30:[function(require,module,exports){
-module.exports = require("core-js/library/fn/object/create");
-},{"core-js/library/fn/object/create":47}],31:[function(require,module,exports){
-module.exports = require("core-js/library/fn/object/define-property");
-},{"core-js/library/fn/object/define-property":48}],32:[function(require,module,exports){
-module.exports = require("core-js/library/fn/object/get-prototype-of");
-},{"core-js/library/fn/object/get-prototype-of":49}],33:[function(require,module,exports){
-module.exports = require("core-js/library/fn/object/set-prototype-of");
-},{"core-js/library/fn/object/set-prototype-of":50}],34:[function(require,module,exports){
-module.exports = require("core-js/library/fn/symbol");
-},{"core-js/library/fn/symbol":51}],35:[function(require,module,exports){
-module.exports = require("core-js/library/fn/symbol/iterator");
-},{"core-js/library/fn/symbol/iterator":52}],36:[function(require,module,exports){
+},{"./components/blog-masonry":5,"./components/equal-height-elements":6,"./components/footer":7,"./components/header":8,"./components/menu":10,"./components/mobile-menu":13,"./components/ow-infinite-scroll":17,"./components/ow-lightbox":18,"./components/ow-slider":19,"./components/scroll-effect":20,"./components/scroll-top":21,"./components/search":22,"./components/select":28,"@babel/runtime/helpers/classCallCheck":33,"@babel/runtime/helpers/classPrivateFieldGet":35,"@babel/runtime/helpers/interopRequireDefault":40}],30:[function(require,module,exports){
 function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -3611,7 +3515,34 @@ function _assertThisInitialized(self) {
 }
 
 module.exports = _assertThisInitialized;
-},{}],37:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],31:[function(require,module,exports){
+function _classApplyDescriptorGet(receiver, descriptor) {
+  if (descriptor.get) {
+    return descriptor.get.call(receiver);
+  }
+
+  return descriptor.value;
+}
+
+module.exports = _classApplyDescriptorGet;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],32:[function(require,module,exports){
+function _classApplyDescriptorSet(receiver, descriptor, value) {
+  if (descriptor.set) {
+    descriptor.set.call(receiver, value);
+  } else {
+    if (!descriptor.writable) {
+      throw new TypeError("attempted to set read only private field");
+    }
+
+    descriptor.value = value;
+  }
+}
+
+module.exports = _classApplyDescriptorSet;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],33:[function(require,module,exports){
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -3619,39 +3550,47 @@ function _classCallCheck(instance, Constructor) {
 }
 
 module.exports = _classCallCheck;
-},{}],38:[function(require,module,exports){
-function _classPrivateFieldGet(receiver, privateMap) {
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],34:[function(require,module,exports){
+function _classExtractFieldDescriptor(receiver, privateMap, action) {
   if (!privateMap.has(receiver)) {
-    throw new TypeError("attempted to get private field on non-instance");
+    throw new TypeError("attempted to " + action + " private field on non-instance");
   }
 
-  return privateMap.get(receiver).value;
+  return privateMap.get(receiver);
+}
+
+module.exports = _classExtractFieldDescriptor;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],35:[function(require,module,exports){
+var classApplyDescriptorGet = require("./classApplyDescriptorGet.js");
+
+var classExtractFieldDescriptor = require("./classExtractFieldDescriptor.js");
+
+function _classPrivateFieldGet(receiver, privateMap) {
+  var descriptor = classExtractFieldDescriptor(receiver, privateMap, "get");
+  return classApplyDescriptorGet(receiver, descriptor);
 }
 
 module.exports = _classPrivateFieldGet;
-},{}],39:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{"./classApplyDescriptorGet.js":31,"./classExtractFieldDescriptor.js":34}],36:[function(require,module,exports){
+var classApplyDescriptorSet = require("./classApplyDescriptorSet.js");
+
+var classExtractFieldDescriptor = require("./classExtractFieldDescriptor.js");
+
 function _classPrivateFieldSet(receiver, privateMap, value) {
-  if (!privateMap.has(receiver)) {
-    throw new TypeError("attempted to set private field on non-instance");
-  }
-
-  var descriptor = privateMap.get(receiver);
-
-  if (!descriptor.writable) {
-    throw new TypeError("attempted to set read only private field");
-  }
-
-  descriptor.value = value;
+  var descriptor = classExtractFieldDescriptor(receiver, privateMap, "set");
+  classApplyDescriptorSet(receiver, descriptor, value);
   return value;
 }
 
 module.exports = _classPrivateFieldSet;
-},{}],40:[function(require,module,exports){
-var _Object$defineProperty = require("../core-js/object/define-property");
-
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{"./classApplyDescriptorSet.js":32,"./classExtractFieldDescriptor.js":34}],37:[function(require,module,exports){
 function _defineProperty(obj, key, value) {
   if (key in obj) {
-    _Object$defineProperty(obj, key, {
+    Object.defineProperty(obj, key, {
       value: value,
       enumerable: true,
       configurable: true,
@@ -3665,30 +3604,27 @@ function _defineProperty(obj, key, value) {
 }
 
 module.exports = _defineProperty;
-},{"../core-js/object/define-property":31}],41:[function(require,module,exports){
-var _Object$getPrototypeOf = require("../core-js/object/get-prototype-of");
-
-var _Object$setPrototypeOf = require("../core-js/object/set-prototype-of");
-
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],38:[function(require,module,exports){
 function _getPrototypeOf(o) {
-  module.exports = _getPrototypeOf = _Object$setPrototypeOf ? _Object$getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || _Object$getPrototypeOf(o);
+  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
   };
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
   return _getPrototypeOf(o);
 }
 
 module.exports = _getPrototypeOf;
-},{"../core-js/object/get-prototype-of":32,"../core-js/object/set-prototype-of":33}],42:[function(require,module,exports){
-var _Object$create = require("../core-js/object/create");
-
-var setPrototypeOf = require("./setPrototypeOf");
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],39:[function(require,module,exports){
+var setPrototypeOf = require("./setPrototypeOf.js");
 
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
 
-  subClass.prototype = _Object$create(superClass && superClass.prototype, {
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
     constructor: {
       value: subClass,
       writable: true,
@@ -3699,18 +3635,20 @@ function _inherits(subClass, superClass) {
 }
 
 module.exports = _inherits;
-},{"../core-js/object/create":30,"./setPrototypeOf":45}],43:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{"./setPrototypeOf.js":42}],40:[function(require,module,exports){
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
-    default: obj
+    "default": obj
   };
 }
 
 module.exports = _interopRequireDefault;
-},{}],44:[function(require,module,exports){
-var _typeof = require("../helpers/typeof");
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],41:[function(require,module,exports){
+var _typeof = require("@babel/runtime/helpers/typeof")["default"];
 
-var assertThisInitialized = require("./assertThisInitialized");
+var assertThisInitialized = require("./assertThisInitialized.js");
 
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
@@ -3721,1193 +3659,44 @@ function _possibleConstructorReturn(self, call) {
 }
 
 module.exports = _possibleConstructorReturn;
-},{"../helpers/typeof":46,"./assertThisInitialized":36}],45:[function(require,module,exports){
-var _Object$setPrototypeOf = require("../core-js/object/set-prototype-of");
-
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{"./assertThisInitialized.js":30,"@babel/runtime/helpers/typeof":43}],42:[function(require,module,exports){
 function _setPrototypeOf(o, p) {
-  module.exports = _setPrototypeOf = _Object$setPrototypeOf || function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
     o.__proto__ = p;
     return o;
   };
 
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
   return _setPrototypeOf(o, p);
 }
 
 module.exports = _setPrototypeOf;
-},{"../core-js/object/set-prototype-of":33}],46:[function(require,module,exports){
-var _Symbol$iterator = require("../core-js/symbol/iterator");
-
-var _Symbol = require("../core-js/symbol");
-
-function _typeof2(obj) { if (typeof _Symbol === "function" && typeof _Symbol$iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof _Symbol === "function" && obj.constructor === _Symbol && obj !== _Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
-
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],43:[function(require,module,exports){
 function _typeof(obj) {
-  if (typeof _Symbol === "function" && _typeof2(_Symbol$iterator) === "symbol") {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
     module.exports = _typeof = function _typeof(obj) {
-      return _typeof2(obj);
+      return typeof obj;
     };
+
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
   } else {
     module.exports = _typeof = function _typeof(obj) {
-      return obj && typeof _Symbol === "function" && obj.constructor === _Symbol && obj !== _Symbol.prototype ? "symbol" : _typeof2(obj);
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
     };
+
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
   }
 
   return _typeof(obj);
 }
 
 module.exports = _typeof;
-},{"../core-js/symbol":34,"../core-js/symbol/iterator":35}],47:[function(require,module,exports){
-require('../../modules/es6.object.create');
-var $Object = require('../../modules/_core').Object;
-module.exports = function create(P, D) {
-  return $Object.create(P, D);
-};
-
-},{"../../modules/_core":58,"../../modules/es6.object.create":111}],48:[function(require,module,exports){
-require('../../modules/es6.object.define-property');
-var $Object = require('../../modules/_core').Object;
-module.exports = function defineProperty(it, key, desc) {
-  return $Object.defineProperty(it, key, desc);
-};
-
-},{"../../modules/_core":58,"../../modules/es6.object.define-property":112}],49:[function(require,module,exports){
-require('../../modules/es6.object.get-prototype-of');
-module.exports = require('../../modules/_core').Object.getPrototypeOf;
-
-},{"../../modules/_core":58,"../../modules/es6.object.get-prototype-of":113}],50:[function(require,module,exports){
-require('../../modules/es6.object.set-prototype-of');
-module.exports = require('../../modules/_core').Object.setPrototypeOf;
-
-},{"../../modules/_core":58,"../../modules/es6.object.set-prototype-of":114}],51:[function(require,module,exports){
-require('../../modules/es6.symbol');
-require('../../modules/es6.object.to-string');
-require('../../modules/es7.symbol.async-iterator');
-require('../../modules/es7.symbol.observable');
-module.exports = require('../../modules/_core').Symbol;
-
-},{"../../modules/_core":58,"../../modules/es6.object.to-string":115,"../../modules/es6.symbol":117,"../../modules/es7.symbol.async-iterator":118,"../../modules/es7.symbol.observable":119}],52:[function(require,module,exports){
-require('../../modules/es6.string.iterator');
-require('../../modules/web.dom.iterable');
-module.exports = require('../../modules/_wks-ext').f('iterator');
-
-},{"../../modules/_wks-ext":108,"../../modules/es6.string.iterator":116,"../../modules/web.dom.iterable":120}],53:[function(require,module,exports){
-module.exports = function (it) {
-  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
-  return it;
-};
-
-},{}],54:[function(require,module,exports){
-module.exports = function () { /* empty */ };
-
-},{}],55:[function(require,module,exports){
-var isObject = require('./_is-object');
-module.exports = function (it) {
-  if (!isObject(it)) throw TypeError(it + ' is not an object!');
-  return it;
-};
-
-},{"./_is-object":74}],56:[function(require,module,exports){
-// false -> Array#indexOf
-// true  -> Array#includes
-var toIObject = require('./_to-iobject');
-var toLength = require('./_to-length');
-var toAbsoluteIndex = require('./_to-absolute-index');
-module.exports = function (IS_INCLUDES) {
-  return function ($this, el, fromIndex) {
-    var O = toIObject($this);
-    var length = toLength(O.length);
-    var index = toAbsoluteIndex(fromIndex, length);
-    var value;
-    // Array#includes uses SameValueZero equality algorithm
-    // eslint-disable-next-line no-self-compare
-    if (IS_INCLUDES && el != el) while (length > index) {
-      value = O[index++];
-      // eslint-disable-next-line no-self-compare
-      if (value != value) return true;
-    // Array#indexOf ignores holes, Array#includes - not
-    } else for (;length > index; index++) if (IS_INCLUDES || index in O) {
-      if (O[index] === el) return IS_INCLUDES || index || 0;
-    } return !IS_INCLUDES && -1;
-  };
-};
-
-},{"./_to-absolute-index":100,"./_to-iobject":102,"./_to-length":103}],57:[function(require,module,exports){
-var toString = {}.toString;
-
-module.exports = function (it) {
-  return toString.call(it).slice(8, -1);
-};
-
-},{}],58:[function(require,module,exports){
-var core = module.exports = { version: '2.6.12' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-},{}],59:[function(require,module,exports){
-// optional / simple context binding
-var aFunction = require('./_a-function');
-module.exports = function (fn, that, length) {
-  aFunction(fn);
-  if (that === undefined) return fn;
-  switch (length) {
-    case 1: return function (a) {
-      return fn.call(that, a);
-    };
-    case 2: return function (a, b) {
-      return fn.call(that, a, b);
-    };
-    case 3: return function (a, b, c) {
-      return fn.call(that, a, b, c);
-    };
-  }
-  return function (/* ...args */) {
-    return fn.apply(that, arguments);
-  };
-};
-
-},{"./_a-function":53}],60:[function(require,module,exports){
-// 7.2.1 RequireObjectCoercible(argument)
-module.exports = function (it) {
-  if (it == undefined) throw TypeError("Can't call method on  " + it);
-  return it;
-};
-
-},{}],61:[function(require,module,exports){
-// Thank's IE8 for his funny defineProperty
-module.exports = !require('./_fails')(function () {
-  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
-});
-
-},{"./_fails":66}],62:[function(require,module,exports){
-var isObject = require('./_is-object');
-var document = require('./_global').document;
-// typeof document.createElement is 'object' in old IE
-var is = isObject(document) && isObject(document.createElement);
-module.exports = function (it) {
-  return is ? document.createElement(it) : {};
-};
-
-},{"./_global":67,"./_is-object":74}],63:[function(require,module,exports){
-// IE 8- don't enum bug keys
-module.exports = (
-  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
-).split(',');
-
-},{}],64:[function(require,module,exports){
-// all enumerable object keys, includes symbols
-var getKeys = require('./_object-keys');
-var gOPS = require('./_object-gops');
-var pIE = require('./_object-pie');
-module.exports = function (it) {
-  var result = getKeys(it);
-  var getSymbols = gOPS.f;
-  if (getSymbols) {
-    var symbols = getSymbols(it);
-    var isEnum = pIE.f;
-    var i = 0;
-    var key;
-    while (symbols.length > i) if (isEnum.call(it, key = symbols[i++])) result.push(key);
-  } return result;
-};
-
-},{"./_object-gops":87,"./_object-keys":90,"./_object-pie":91}],65:[function(require,module,exports){
-var global = require('./_global');
-var core = require('./_core');
-var ctx = require('./_ctx');
-var hide = require('./_hide');
-var has = require('./_has');
-var PROTOTYPE = 'prototype';
-
-var $export = function (type, name, source) {
-  var IS_FORCED = type & $export.F;
-  var IS_GLOBAL = type & $export.G;
-  var IS_STATIC = type & $export.S;
-  var IS_PROTO = type & $export.P;
-  var IS_BIND = type & $export.B;
-  var IS_WRAP = type & $export.W;
-  var exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
-  var expProto = exports[PROTOTYPE];
-  var target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE];
-  var key, own, out;
-  if (IS_GLOBAL) source = name;
-  for (key in source) {
-    // contains in native
-    own = !IS_FORCED && target && target[key] !== undefined;
-    if (own && has(exports, key)) continue;
-    // export native or passed
-    out = own ? target[key] : source[key];
-    // prevent global pollution for namespaces
-    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
-    // bind timers to global for call from export context
-    : IS_BIND && own ? ctx(out, global)
-    // wrap global constructors for prevent change them in library
-    : IS_WRAP && target[key] == out ? (function (C) {
-      var F = function (a, b, c) {
-        if (this instanceof C) {
-          switch (arguments.length) {
-            case 0: return new C();
-            case 1: return new C(a);
-            case 2: return new C(a, b);
-          } return new C(a, b, c);
-        } return C.apply(this, arguments);
-      };
-      F[PROTOTYPE] = C[PROTOTYPE];
-      return F;
-    // make static versions for prototype methods
-    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
-    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
-    if (IS_PROTO) {
-      (exports.virtual || (exports.virtual = {}))[key] = out;
-      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
-      if (type & $export.R && expProto && !expProto[key]) hide(expProto, key, out);
-    }
-  }
-};
-// type bitmap
-$export.F = 1;   // forced
-$export.G = 2;   // global
-$export.S = 4;   // static
-$export.P = 8;   // proto
-$export.B = 16;  // bind
-$export.W = 32;  // wrap
-$export.U = 64;  // safe
-$export.R = 128; // real proto method for `library`
-module.exports = $export;
-
-},{"./_core":58,"./_ctx":59,"./_global":67,"./_has":68,"./_hide":69}],66:[function(require,module,exports){
-module.exports = function (exec) {
-  try {
-    return !!exec();
-  } catch (e) {
-    return true;
-  }
-};
-
-},{}],67:[function(require,module,exports){
-// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-var global = module.exports = typeof window != 'undefined' && window.Math == Math
-  ? window : typeof self != 'undefined' && self.Math == Math ? self
-  // eslint-disable-next-line no-new-func
-  : Function('return this')();
-if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
-
-},{}],68:[function(require,module,exports){
-var hasOwnProperty = {}.hasOwnProperty;
-module.exports = function (it, key) {
-  return hasOwnProperty.call(it, key);
-};
-
-},{}],69:[function(require,module,exports){
-var dP = require('./_object-dp');
-var createDesc = require('./_property-desc');
-module.exports = require('./_descriptors') ? function (object, key, value) {
-  return dP.f(object, key, createDesc(1, value));
-} : function (object, key, value) {
-  object[key] = value;
-  return object;
-};
-
-},{"./_descriptors":61,"./_object-dp":82,"./_property-desc":93}],70:[function(require,module,exports){
-var document = require('./_global').document;
-module.exports = document && document.documentElement;
-
-},{"./_global":67}],71:[function(require,module,exports){
-module.exports = !require('./_descriptors') && !require('./_fails')(function () {
-  return Object.defineProperty(require('./_dom-create')('div'), 'a', { get: function () { return 7; } }).a != 7;
-});
-
-},{"./_descriptors":61,"./_dom-create":62,"./_fails":66}],72:[function(require,module,exports){
-// fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = require('./_cof');
-// eslint-disable-next-line no-prototype-builtins
-module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
-  return cof(it) == 'String' ? it.split('') : Object(it);
-};
-
-},{"./_cof":57}],73:[function(require,module,exports){
-// 7.2.2 IsArray(argument)
-var cof = require('./_cof');
-module.exports = Array.isArray || function isArray(arg) {
-  return cof(arg) == 'Array';
-};
-
-},{"./_cof":57}],74:[function(require,module,exports){
-module.exports = function (it) {
-  return typeof it === 'object' ? it !== null : typeof it === 'function';
-};
-
-},{}],75:[function(require,module,exports){
-'use strict';
-var create = require('./_object-create');
-var descriptor = require('./_property-desc');
-var setToStringTag = require('./_set-to-string-tag');
-var IteratorPrototype = {};
-
-// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-require('./_hide')(IteratorPrototype, require('./_wks')('iterator'), function () { return this; });
-
-module.exports = function (Constructor, NAME, next) {
-  Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
-  setToStringTag(Constructor, NAME + ' Iterator');
-};
-
-},{"./_hide":69,"./_object-create":81,"./_property-desc":93,"./_set-to-string-tag":96,"./_wks":109}],76:[function(require,module,exports){
-'use strict';
-var LIBRARY = require('./_library');
-var $export = require('./_export');
-var redefine = require('./_redefine');
-var hide = require('./_hide');
-var Iterators = require('./_iterators');
-var $iterCreate = require('./_iter-create');
-var setToStringTag = require('./_set-to-string-tag');
-var getPrototypeOf = require('./_object-gpo');
-var ITERATOR = require('./_wks')('iterator');
-var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
-var FF_ITERATOR = '@@iterator';
-var KEYS = 'keys';
-var VALUES = 'values';
-
-var returnThis = function () { return this; };
-
-module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED) {
-  $iterCreate(Constructor, NAME, next);
-  var getMethod = function (kind) {
-    if (!BUGGY && kind in proto) return proto[kind];
-    switch (kind) {
-      case KEYS: return function keys() { return new Constructor(this, kind); };
-      case VALUES: return function values() { return new Constructor(this, kind); };
-    } return function entries() { return new Constructor(this, kind); };
-  };
-  var TAG = NAME + ' Iterator';
-  var DEF_VALUES = DEFAULT == VALUES;
-  var VALUES_BUG = false;
-  var proto = Base.prototype;
-  var $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT];
-  var $default = $native || getMethod(DEFAULT);
-  var $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined;
-  var $anyNative = NAME == 'Array' ? proto.entries || $native : $native;
-  var methods, key, IteratorPrototype;
-  // Fix native
-  if ($anyNative) {
-    IteratorPrototype = getPrototypeOf($anyNative.call(new Base()));
-    if (IteratorPrototype !== Object.prototype && IteratorPrototype.next) {
-      // Set @@toStringTag to native iterators
-      setToStringTag(IteratorPrototype, TAG, true);
-      // fix for some old engines
-      if (!LIBRARY && typeof IteratorPrototype[ITERATOR] != 'function') hide(IteratorPrototype, ITERATOR, returnThis);
-    }
-  }
-  // fix Array#{values, @@iterator}.name in V8 / FF
-  if (DEF_VALUES && $native && $native.name !== VALUES) {
-    VALUES_BUG = true;
-    $default = function values() { return $native.call(this); };
-  }
-  // Define iterator
-  if ((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])) {
-    hide(proto, ITERATOR, $default);
-  }
-  // Plug for library
-  Iterators[NAME] = $default;
-  Iterators[TAG] = returnThis;
-  if (DEFAULT) {
-    methods = {
-      values: DEF_VALUES ? $default : getMethod(VALUES),
-      keys: IS_SET ? $default : getMethod(KEYS),
-      entries: $entries
-    };
-    if (FORCED) for (key in methods) {
-      if (!(key in proto)) redefine(proto, key, methods[key]);
-    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
-  }
-  return methods;
-};
-
-},{"./_export":65,"./_hide":69,"./_iter-create":75,"./_iterators":78,"./_library":79,"./_object-gpo":88,"./_redefine":94,"./_set-to-string-tag":96,"./_wks":109}],77:[function(require,module,exports){
-module.exports = function (done, value) {
-  return { value: value, done: !!done };
-};
-
-},{}],78:[function(require,module,exports){
-module.exports = {};
-
-},{}],79:[function(require,module,exports){
-module.exports = true;
-
-},{}],80:[function(require,module,exports){
-var META = require('./_uid')('meta');
-var isObject = require('./_is-object');
-var has = require('./_has');
-var setDesc = require('./_object-dp').f;
-var id = 0;
-var isExtensible = Object.isExtensible || function () {
-  return true;
-};
-var FREEZE = !require('./_fails')(function () {
-  return isExtensible(Object.preventExtensions({}));
-});
-var setMeta = function (it) {
-  setDesc(it, META, { value: {
-    i: 'O' + ++id, // object ID
-    w: {}          // weak collections IDs
-  } });
-};
-var fastKey = function (it, create) {
-  // return primitive with prefix
-  if (!isObject(it)) return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
-  if (!has(it, META)) {
-    // can't set metadata to uncaught frozen object
-    if (!isExtensible(it)) return 'F';
-    // not necessary to add metadata
-    if (!create) return 'E';
-    // add missing metadata
-    setMeta(it);
-  // return object ID
-  } return it[META].i;
-};
-var getWeak = function (it, create) {
-  if (!has(it, META)) {
-    // can't set metadata to uncaught frozen object
-    if (!isExtensible(it)) return true;
-    // not necessary to add metadata
-    if (!create) return false;
-    // add missing metadata
-    setMeta(it);
-  // return hash weak collections IDs
-  } return it[META].w;
-};
-// add metadata on freeze-family methods calling
-var onFreeze = function (it) {
-  if (FREEZE && meta.NEED && isExtensible(it) && !has(it, META)) setMeta(it);
-  return it;
-};
-var meta = module.exports = {
-  KEY: META,
-  NEED: false,
-  fastKey: fastKey,
-  getWeak: getWeak,
-  onFreeze: onFreeze
-};
-
-},{"./_fails":66,"./_has":68,"./_is-object":74,"./_object-dp":82,"./_uid":106}],81:[function(require,module,exports){
-// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject = require('./_an-object');
-var dPs = require('./_object-dps');
-var enumBugKeys = require('./_enum-bug-keys');
-var IE_PROTO = require('./_shared-key')('IE_PROTO');
-var Empty = function () { /* empty */ };
-var PROTOTYPE = 'prototype';
-
-// Create object with fake `null` prototype: use iframe Object with cleared prototype
-var createDict = function () {
-  // Thrash, waste and sodomy: IE GC bug
-  var iframe = require('./_dom-create')('iframe');
-  var i = enumBugKeys.length;
-  var lt = '<';
-  var gt = '>';
-  var iframeDocument;
-  iframe.style.display = 'none';
-  require('./_html').appendChild(iframe);
-  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
-  // createDict = iframe.contentWindow.Object;
-  // html.removeChild(iframe);
-  iframeDocument = iframe.contentWindow.document;
-  iframeDocument.open();
-  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
-  iframeDocument.close();
-  createDict = iframeDocument.F;
-  while (i--) delete createDict[PROTOTYPE][enumBugKeys[i]];
-  return createDict();
-};
-
-module.exports = Object.create || function create(O, Properties) {
-  var result;
-  if (O !== null) {
-    Empty[PROTOTYPE] = anObject(O);
-    result = new Empty();
-    Empty[PROTOTYPE] = null;
-    // add "__proto__" for Object.getPrototypeOf polyfill
-    result[IE_PROTO] = O;
-  } else result = createDict();
-  return Properties === undefined ? result : dPs(result, Properties);
-};
-
-},{"./_an-object":55,"./_dom-create":62,"./_enum-bug-keys":63,"./_html":70,"./_object-dps":83,"./_shared-key":97}],82:[function(require,module,exports){
-var anObject = require('./_an-object');
-var IE8_DOM_DEFINE = require('./_ie8-dom-define');
-var toPrimitive = require('./_to-primitive');
-var dP = Object.defineProperty;
-
-exports.f = require('./_descriptors') ? Object.defineProperty : function defineProperty(O, P, Attributes) {
-  anObject(O);
-  P = toPrimitive(P, true);
-  anObject(Attributes);
-  if (IE8_DOM_DEFINE) try {
-    return dP(O, P, Attributes);
-  } catch (e) { /* empty */ }
-  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
-  if ('value' in Attributes) O[P] = Attributes.value;
-  return O;
-};
-
-},{"./_an-object":55,"./_descriptors":61,"./_ie8-dom-define":71,"./_to-primitive":105}],83:[function(require,module,exports){
-var dP = require('./_object-dp');
-var anObject = require('./_an-object');
-var getKeys = require('./_object-keys');
-
-module.exports = require('./_descriptors') ? Object.defineProperties : function defineProperties(O, Properties) {
-  anObject(O);
-  var keys = getKeys(Properties);
-  var length = keys.length;
-  var i = 0;
-  var P;
-  while (length > i) dP.f(O, P = keys[i++], Properties[P]);
-  return O;
-};
-
-},{"./_an-object":55,"./_descriptors":61,"./_object-dp":82,"./_object-keys":90}],84:[function(require,module,exports){
-var pIE = require('./_object-pie');
-var createDesc = require('./_property-desc');
-var toIObject = require('./_to-iobject');
-var toPrimitive = require('./_to-primitive');
-var has = require('./_has');
-var IE8_DOM_DEFINE = require('./_ie8-dom-define');
-var gOPD = Object.getOwnPropertyDescriptor;
-
-exports.f = require('./_descriptors') ? gOPD : function getOwnPropertyDescriptor(O, P) {
-  O = toIObject(O);
-  P = toPrimitive(P, true);
-  if (IE8_DOM_DEFINE) try {
-    return gOPD(O, P);
-  } catch (e) { /* empty */ }
-  if (has(O, P)) return createDesc(!pIE.f.call(O, P), O[P]);
-};
-
-},{"./_descriptors":61,"./_has":68,"./_ie8-dom-define":71,"./_object-pie":91,"./_property-desc":93,"./_to-iobject":102,"./_to-primitive":105}],85:[function(require,module,exports){
-// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = require('./_to-iobject');
-var gOPN = require('./_object-gopn').f;
-var toString = {}.toString;
-
-var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
-  ? Object.getOwnPropertyNames(window) : [];
-
-var getWindowNames = function (it) {
-  try {
-    return gOPN(it);
-  } catch (e) {
-    return windowNames.slice();
-  }
-};
-
-module.exports.f = function getOwnPropertyNames(it) {
-  return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
-};
-
-},{"./_object-gopn":86,"./_to-iobject":102}],86:[function(require,module,exports){
-// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = require('./_object-keys-internal');
-var hiddenKeys = require('./_enum-bug-keys').concat('length', 'prototype');
-
-exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
-  return $keys(O, hiddenKeys);
-};
-
-},{"./_enum-bug-keys":63,"./_object-keys-internal":89}],87:[function(require,module,exports){
-exports.f = Object.getOwnPropertySymbols;
-
-},{}],88:[function(require,module,exports){
-// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = require('./_has');
-var toObject = require('./_to-object');
-var IE_PROTO = require('./_shared-key')('IE_PROTO');
-var ObjectProto = Object.prototype;
-
-module.exports = Object.getPrototypeOf || function (O) {
-  O = toObject(O);
-  if (has(O, IE_PROTO)) return O[IE_PROTO];
-  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
-    return O.constructor.prototype;
-  } return O instanceof Object ? ObjectProto : null;
-};
-
-},{"./_has":68,"./_shared-key":97,"./_to-object":104}],89:[function(require,module,exports){
-var has = require('./_has');
-var toIObject = require('./_to-iobject');
-var arrayIndexOf = require('./_array-includes')(false);
-var IE_PROTO = require('./_shared-key')('IE_PROTO');
-
-module.exports = function (object, names) {
-  var O = toIObject(object);
-  var i = 0;
-  var result = [];
-  var key;
-  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
-  // Don't enum bug & hidden keys
-  while (names.length > i) if (has(O, key = names[i++])) {
-    ~arrayIndexOf(result, key) || result.push(key);
-  }
-  return result;
-};
-
-},{"./_array-includes":56,"./_has":68,"./_shared-key":97,"./_to-iobject":102}],90:[function(require,module,exports){
-// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = require('./_object-keys-internal');
-var enumBugKeys = require('./_enum-bug-keys');
-
-module.exports = Object.keys || function keys(O) {
-  return $keys(O, enumBugKeys);
-};
-
-},{"./_enum-bug-keys":63,"./_object-keys-internal":89}],91:[function(require,module,exports){
-exports.f = {}.propertyIsEnumerable;
-
-},{}],92:[function(require,module,exports){
-// most Object methods by ES6 should accept primitives
-var $export = require('./_export');
-var core = require('./_core');
-var fails = require('./_fails');
-module.exports = function (KEY, exec) {
-  var fn = (core.Object || {})[KEY] || Object[KEY];
-  var exp = {};
-  exp[KEY] = exec(fn);
-  $export($export.S + $export.F * fails(function () { fn(1); }), 'Object', exp);
-};
-
-},{"./_core":58,"./_export":65,"./_fails":66}],93:[function(require,module,exports){
-module.exports = function (bitmap, value) {
-  return {
-    enumerable: !(bitmap & 1),
-    configurable: !(bitmap & 2),
-    writable: !(bitmap & 4),
-    value: value
-  };
-};
-
-},{}],94:[function(require,module,exports){
-module.exports = require('./_hide');
-
-},{"./_hide":69}],95:[function(require,module,exports){
-// Works with __proto__ only. Old v8 can't work with null proto objects.
-/* eslint-disable no-proto */
-var isObject = require('./_is-object');
-var anObject = require('./_an-object');
-var check = function (O, proto) {
-  anObject(O);
-  if (!isObject(proto) && proto !== null) throw TypeError(proto + ": can't set as prototype!");
-};
-module.exports = {
-  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
-    function (test, buggy, set) {
-      try {
-        set = require('./_ctx')(Function.call, require('./_object-gopd').f(Object.prototype, '__proto__').set, 2);
-        set(test, []);
-        buggy = !(test instanceof Array);
-      } catch (e) { buggy = true; }
-      return function setPrototypeOf(O, proto) {
-        check(O, proto);
-        if (buggy) O.__proto__ = proto;
-        else set(O, proto);
-        return O;
-      };
-    }({}, false) : undefined),
-  check: check
-};
-
-},{"./_an-object":55,"./_ctx":59,"./_is-object":74,"./_object-gopd":84}],96:[function(require,module,exports){
-var def = require('./_object-dp').f;
-var has = require('./_has');
-var TAG = require('./_wks')('toStringTag');
-
-module.exports = function (it, tag, stat) {
-  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
-};
-
-},{"./_has":68,"./_object-dp":82,"./_wks":109}],97:[function(require,module,exports){
-var shared = require('./_shared')('keys');
-var uid = require('./_uid');
-module.exports = function (key) {
-  return shared[key] || (shared[key] = uid(key));
-};
-
-},{"./_shared":98,"./_uid":106}],98:[function(require,module,exports){
-var core = require('./_core');
-var global = require('./_global');
-var SHARED = '__core-js_shared__';
-var store = global[SHARED] || (global[SHARED] = {});
-
-(module.exports = function (key, value) {
-  return store[key] || (store[key] = value !== undefined ? value : {});
-})('versions', []).push({
-  version: core.version,
-  mode: require('./_library') ? 'pure' : 'global',
-  copyright: '© 2020 Denis Pushkarev (zloirock.ru)'
-});
-
-},{"./_core":58,"./_global":67,"./_library":79}],99:[function(require,module,exports){
-var toInteger = require('./_to-integer');
-var defined = require('./_defined');
-// true  -> String#at
-// false -> String#codePointAt
-module.exports = function (TO_STRING) {
-  return function (that, pos) {
-    var s = String(defined(that));
-    var i = toInteger(pos);
-    var l = s.length;
-    var a, b;
-    if (i < 0 || i >= l) return TO_STRING ? '' : undefined;
-    a = s.charCodeAt(i);
-    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
-      ? TO_STRING ? s.charAt(i) : a
-      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
-  };
-};
-
-},{"./_defined":60,"./_to-integer":101}],100:[function(require,module,exports){
-var toInteger = require('./_to-integer');
-var max = Math.max;
-var min = Math.min;
-module.exports = function (index, length) {
-  index = toInteger(index);
-  return index < 0 ? max(index + length, 0) : min(index, length);
-};
-
-},{"./_to-integer":101}],101:[function(require,module,exports){
-// 7.1.4 ToInteger
-var ceil = Math.ceil;
-var floor = Math.floor;
-module.exports = function (it) {
-  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
-};
-
-},{}],102:[function(require,module,exports){
-// to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = require('./_iobject');
-var defined = require('./_defined');
-module.exports = function (it) {
-  return IObject(defined(it));
-};
-
-},{"./_defined":60,"./_iobject":72}],103:[function(require,module,exports){
-// 7.1.15 ToLength
-var toInteger = require('./_to-integer');
-var min = Math.min;
-module.exports = function (it) {
-  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
-};
-
-},{"./_to-integer":101}],104:[function(require,module,exports){
-// 7.1.13 ToObject(argument)
-var defined = require('./_defined');
-module.exports = function (it) {
-  return Object(defined(it));
-};
-
-},{"./_defined":60}],105:[function(require,module,exports){
-// 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = require('./_is-object');
-// instead of the ES6 spec version, we didn't implement @@toPrimitive case
-// and the second argument - flag - preferred type is a string
-module.exports = function (it, S) {
-  if (!isObject(it)) return it;
-  var fn, val;
-  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
-  throw TypeError("Can't convert object to primitive value");
-};
-
-},{"./_is-object":74}],106:[function(require,module,exports){
-var id = 0;
-var px = Math.random();
-module.exports = function (key) {
-  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-};
-
-},{}],107:[function(require,module,exports){
-var global = require('./_global');
-var core = require('./_core');
-var LIBRARY = require('./_library');
-var wksExt = require('./_wks-ext');
-var defineProperty = require('./_object-dp').f;
-module.exports = function (name) {
-  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
-  if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
-};
-
-},{"./_core":58,"./_global":67,"./_library":79,"./_object-dp":82,"./_wks-ext":108}],108:[function(require,module,exports){
-exports.f = require('./_wks');
-
-},{"./_wks":109}],109:[function(require,module,exports){
-var store = require('./_shared')('wks');
-var uid = require('./_uid');
-var Symbol = require('./_global').Symbol;
-var USE_SYMBOL = typeof Symbol == 'function';
-
-var $exports = module.exports = function (name) {
-  return store[name] || (store[name] =
-    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
-};
-
-$exports.store = store;
-
-},{"./_global":67,"./_shared":98,"./_uid":106}],110:[function(require,module,exports){
-'use strict';
-var addToUnscopables = require('./_add-to-unscopables');
-var step = require('./_iter-step');
-var Iterators = require('./_iterators');
-var toIObject = require('./_to-iobject');
-
-// 22.1.3.4 Array.prototype.entries()
-// 22.1.3.13 Array.prototype.keys()
-// 22.1.3.29 Array.prototype.values()
-// 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = require('./_iter-define')(Array, 'Array', function (iterated, kind) {
-  this._t = toIObject(iterated); // target
-  this._i = 0;                   // next index
-  this._k = kind;                // kind
-// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
-}, function () {
-  var O = this._t;
-  var kind = this._k;
-  var index = this._i++;
-  if (!O || index >= O.length) {
-    this._t = undefined;
-    return step(1);
-  }
-  if (kind == 'keys') return step(0, index);
-  if (kind == 'values') return step(0, O[index]);
-  return step(0, [index, O[index]]);
-}, 'values');
-
-// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
-Iterators.Arguments = Iterators.Array;
-
-addToUnscopables('keys');
-addToUnscopables('values');
-addToUnscopables('entries');
-
-},{"./_add-to-unscopables":54,"./_iter-define":76,"./_iter-step":77,"./_iterators":78,"./_to-iobject":102}],111:[function(require,module,exports){
-var $export = require('./_export');
-// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-$export($export.S, 'Object', { create: require('./_object-create') });
-
-},{"./_export":65,"./_object-create":81}],112:[function(require,module,exports){
-var $export = require('./_export');
-// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-$export($export.S + $export.F * !require('./_descriptors'), 'Object', { defineProperty: require('./_object-dp').f });
-
-},{"./_descriptors":61,"./_export":65,"./_object-dp":82}],113:[function(require,module,exports){
-// 19.1.2.9 Object.getPrototypeOf(O)
-var toObject = require('./_to-object');
-var $getPrototypeOf = require('./_object-gpo');
-
-require('./_object-sap')('getPrototypeOf', function () {
-  return function getPrototypeOf(it) {
-    return $getPrototypeOf(toObject(it));
-  };
-});
-
-},{"./_object-gpo":88,"./_object-sap":92,"./_to-object":104}],114:[function(require,module,exports){
-// 19.1.3.19 Object.setPrototypeOf(O, proto)
-var $export = require('./_export');
-$export($export.S, 'Object', { setPrototypeOf: require('./_set-proto').set });
-
-},{"./_export":65,"./_set-proto":95}],115:[function(require,module,exports){
-
-},{}],116:[function(require,module,exports){
-'use strict';
-var $at = require('./_string-at')(true);
-
-// 21.1.3.27 String.prototype[@@iterator]()
-require('./_iter-define')(String, 'String', function (iterated) {
-  this._t = String(iterated); // target
-  this._i = 0;                // next index
-// 21.1.5.2.1 %StringIteratorPrototype%.next()
-}, function () {
-  var O = this._t;
-  var index = this._i;
-  var point;
-  if (index >= O.length) return { value: undefined, done: true };
-  point = $at(O, index);
-  this._i += point.length;
-  return { value: point, done: false };
-});
-
-},{"./_iter-define":76,"./_string-at":99}],117:[function(require,module,exports){
-'use strict';
-// ECMAScript 6 symbols shim
-var global = require('./_global');
-var has = require('./_has');
-var DESCRIPTORS = require('./_descriptors');
-var $export = require('./_export');
-var redefine = require('./_redefine');
-var META = require('./_meta').KEY;
-var $fails = require('./_fails');
-var shared = require('./_shared');
-var setToStringTag = require('./_set-to-string-tag');
-var uid = require('./_uid');
-var wks = require('./_wks');
-var wksExt = require('./_wks-ext');
-var wksDefine = require('./_wks-define');
-var enumKeys = require('./_enum-keys');
-var isArray = require('./_is-array');
-var anObject = require('./_an-object');
-var isObject = require('./_is-object');
-var toObject = require('./_to-object');
-var toIObject = require('./_to-iobject');
-var toPrimitive = require('./_to-primitive');
-var createDesc = require('./_property-desc');
-var _create = require('./_object-create');
-var gOPNExt = require('./_object-gopn-ext');
-var $GOPD = require('./_object-gopd');
-var $GOPS = require('./_object-gops');
-var $DP = require('./_object-dp');
-var $keys = require('./_object-keys');
-var gOPD = $GOPD.f;
-var dP = $DP.f;
-var gOPN = gOPNExt.f;
-var $Symbol = global.Symbol;
-var $JSON = global.JSON;
-var _stringify = $JSON && $JSON.stringify;
-var PROTOTYPE = 'prototype';
-var HIDDEN = wks('_hidden');
-var TO_PRIMITIVE = wks('toPrimitive');
-var isEnum = {}.propertyIsEnumerable;
-var SymbolRegistry = shared('symbol-registry');
-var AllSymbols = shared('symbols');
-var OPSymbols = shared('op-symbols');
-var ObjectProto = Object[PROTOTYPE];
-var USE_NATIVE = typeof $Symbol == 'function' && !!$GOPS.f;
-var QObject = global.QObject;
-// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
-var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
-
-// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
-var setSymbolDesc = DESCRIPTORS && $fails(function () {
-  return _create(dP({}, 'a', {
-    get: function () { return dP(this, 'a', { value: 7 }).a; }
-  })).a != 7;
-}) ? function (it, key, D) {
-  var protoDesc = gOPD(ObjectProto, key);
-  if (protoDesc) delete ObjectProto[key];
-  dP(it, key, D);
-  if (protoDesc && it !== ObjectProto) dP(ObjectProto, key, protoDesc);
-} : dP;
-
-var wrap = function (tag) {
-  var sym = AllSymbols[tag] = _create($Symbol[PROTOTYPE]);
-  sym._k = tag;
-  return sym;
-};
-
-var isSymbol = USE_NATIVE && typeof $Symbol.iterator == 'symbol' ? function (it) {
-  return typeof it == 'symbol';
-} : function (it) {
-  return it instanceof $Symbol;
-};
-
-var $defineProperty = function defineProperty(it, key, D) {
-  if (it === ObjectProto) $defineProperty(OPSymbols, key, D);
-  anObject(it);
-  key = toPrimitive(key, true);
-  anObject(D);
-  if (has(AllSymbols, key)) {
-    if (!D.enumerable) {
-      if (!has(it, HIDDEN)) dP(it, HIDDEN, createDesc(1, {}));
-      it[HIDDEN][key] = true;
-    } else {
-      if (has(it, HIDDEN) && it[HIDDEN][key]) it[HIDDEN][key] = false;
-      D = _create(D, { enumerable: createDesc(0, false) });
-    } return setSymbolDesc(it, key, D);
-  } return dP(it, key, D);
-};
-var $defineProperties = function defineProperties(it, P) {
-  anObject(it);
-  var keys = enumKeys(P = toIObject(P));
-  var i = 0;
-  var l = keys.length;
-  var key;
-  while (l > i) $defineProperty(it, key = keys[i++], P[key]);
-  return it;
-};
-var $create = function create(it, P) {
-  return P === undefined ? _create(it) : $defineProperties(_create(it), P);
-};
-var $propertyIsEnumerable = function propertyIsEnumerable(key) {
-  var E = isEnum.call(this, key = toPrimitive(key, true));
-  if (this === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) return false;
-  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
-};
-var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key) {
-  it = toIObject(it);
-  key = toPrimitive(key, true);
-  if (it === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) return;
-  var D = gOPD(it, key);
-  if (D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key])) D.enumerable = true;
-  return D;
-};
-var $getOwnPropertyNames = function getOwnPropertyNames(it) {
-  var names = gOPN(toIObject(it));
-  var result = [];
-  var i = 0;
-  var key;
-  while (names.length > i) {
-    if (!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META) result.push(key);
-  } return result;
-};
-var $getOwnPropertySymbols = function getOwnPropertySymbols(it) {
-  var IS_OP = it === ObjectProto;
-  var names = gOPN(IS_OP ? OPSymbols : toIObject(it));
-  var result = [];
-  var i = 0;
-  var key;
-  while (names.length > i) {
-    if (has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectProto, key) : true)) result.push(AllSymbols[key]);
-  } return result;
-};
-
-// 19.4.1.1 Symbol([description])
-if (!USE_NATIVE) {
-  $Symbol = function Symbol() {
-    if (this instanceof $Symbol) throw TypeError('Symbol is not a constructor!');
-    var tag = uid(arguments.length > 0 ? arguments[0] : undefined);
-    var $set = function (value) {
-      if (this === ObjectProto) $set.call(OPSymbols, value);
-      if (has(this, HIDDEN) && has(this[HIDDEN], tag)) this[HIDDEN][tag] = false;
-      setSymbolDesc(this, tag, createDesc(1, value));
-    };
-    if (DESCRIPTORS && setter) setSymbolDesc(ObjectProto, tag, { configurable: true, set: $set });
-    return wrap(tag);
-  };
-  redefine($Symbol[PROTOTYPE], 'toString', function toString() {
-    return this._k;
-  });
-
-  $GOPD.f = $getOwnPropertyDescriptor;
-  $DP.f = $defineProperty;
-  require('./_object-gopn').f = gOPNExt.f = $getOwnPropertyNames;
-  require('./_object-pie').f = $propertyIsEnumerable;
-  $GOPS.f = $getOwnPropertySymbols;
-
-  if (DESCRIPTORS && !require('./_library')) {
-    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
-  }
-
-  wksExt.f = function (name) {
-    return wrap(wks(name));
-  };
-}
-
-$export($export.G + $export.W + $export.F * !USE_NATIVE, { Symbol: $Symbol });
-
-for (var es6Symbols = (
-  // 19.4.2.2, 19.4.2.3, 19.4.2.4, 19.4.2.6, 19.4.2.8, 19.4.2.9, 19.4.2.10, 19.4.2.11, 19.4.2.12, 19.4.2.13, 19.4.2.14
-  'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
-).split(','), j = 0; es6Symbols.length > j;)wks(es6Symbols[j++]);
-
-for (var wellKnownSymbols = $keys(wks.store), k = 0; wellKnownSymbols.length > k;) wksDefine(wellKnownSymbols[k++]);
-
-$export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
-  // 19.4.2.1 Symbol.for(key)
-  'for': function (key) {
-    return has(SymbolRegistry, key += '')
-      ? SymbolRegistry[key]
-      : SymbolRegistry[key] = $Symbol(key);
-  },
-  // 19.4.2.5 Symbol.keyFor(sym)
-  keyFor: function keyFor(sym) {
-    if (!isSymbol(sym)) throw TypeError(sym + ' is not a symbol!');
-    for (var key in SymbolRegistry) if (SymbolRegistry[key] === sym) return key;
-  },
-  useSetter: function () { setter = true; },
-  useSimple: function () { setter = false; }
-});
-
-$export($export.S + $export.F * !USE_NATIVE, 'Object', {
-  // 19.1.2.2 Object.create(O [, Properties])
-  create: $create,
-  // 19.1.2.4 Object.defineProperty(O, P, Attributes)
-  defineProperty: $defineProperty,
-  // 19.1.2.3 Object.defineProperties(O, Properties)
-  defineProperties: $defineProperties,
-  // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
-  getOwnPropertyDescriptor: $getOwnPropertyDescriptor,
-  // 19.1.2.7 Object.getOwnPropertyNames(O)
-  getOwnPropertyNames: $getOwnPropertyNames,
-  // 19.1.2.8 Object.getOwnPropertySymbols(O)
-  getOwnPropertySymbols: $getOwnPropertySymbols
-});
-
-// Chrome 38 and 39 `Object.getOwnPropertySymbols` fails on primitives
-// https://bugs.chromium.org/p/v8/issues/detail?id=3443
-var FAILS_ON_PRIMITIVES = $fails(function () { $GOPS.f(1); });
-
-$export($export.S + $export.F * FAILS_ON_PRIMITIVES, 'Object', {
-  getOwnPropertySymbols: function getOwnPropertySymbols(it) {
-    return $GOPS.f(toObject(it));
-  }
-});
-
-// 24.3.2 JSON.stringify(value [, replacer [, space]])
-$JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
-  var S = $Symbol();
-  // MS Edge converts symbol values to JSON as {}
-  // WebKit converts symbol values to JSON as null
-  // V8 throws on boxed symbols
-  return _stringify([S]) != '[null]' || _stringify({ a: S }) != '{}' || _stringify(Object(S)) != '{}';
-})), 'JSON', {
-  stringify: function stringify(it) {
-    var args = [it];
-    var i = 1;
-    var replacer, $replacer;
-    while (arguments.length > i) args.push(arguments[i++]);
-    $replacer = replacer = args[1];
-    if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
-    if (!isArray(replacer)) replacer = function (key, value) {
-      if (typeof $replacer == 'function') value = $replacer.call(this, key, value);
-      if (!isSymbol(value)) return value;
-    };
-    args[1] = replacer;
-    return _stringify.apply($JSON, args);
-  }
-});
-
-// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-$Symbol[PROTOTYPE][TO_PRIMITIVE] || require('./_hide')($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
-// 19.4.3.5 Symbol.prototype[@@toStringTag]
-setToStringTag($Symbol, 'Symbol');
-// 20.2.1.9 Math[@@toStringTag]
-setToStringTag(Math, 'Math', true);
-// 24.3.3 JSON[@@toStringTag]
-setToStringTag(global.JSON, 'JSON', true);
-
-},{"./_an-object":55,"./_descriptors":61,"./_enum-keys":64,"./_export":65,"./_fails":66,"./_global":67,"./_has":68,"./_hide":69,"./_is-array":73,"./_is-object":74,"./_library":79,"./_meta":80,"./_object-create":81,"./_object-dp":82,"./_object-gopd":84,"./_object-gopn":86,"./_object-gopn-ext":85,"./_object-gops":87,"./_object-keys":90,"./_object-pie":91,"./_property-desc":93,"./_redefine":94,"./_set-to-string-tag":96,"./_shared":98,"./_to-iobject":102,"./_to-object":104,"./_to-primitive":105,"./_uid":106,"./_wks":109,"./_wks-define":107,"./_wks-ext":108}],118:[function(require,module,exports){
-require('./_wks-define')('asyncIterator');
-
-},{"./_wks-define":107}],119:[function(require,module,exports){
-require('./_wks-define')('observable');
-
-},{"./_wks-define":107}],120:[function(require,module,exports){
-require('./es6.array.iterator');
-var global = require('./_global');
-var hide = require('./_hide');
-var Iterators = require('./_iterators');
-var TO_STRING_TAG = require('./_wks')('toStringTag');
-
-var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
-  'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
-  'MediaList,MimeTypeArray,NamedNodeMap,NodeList,PaintRequestList,Plugin,PluginArray,SVGLengthList,SVGNumberList,' +
-  'SVGPathSegList,SVGPointList,SVGStringList,SVGTransformList,SourceBufferList,StyleSheetList,TextTrackCueList,' +
-  'TextTrackList,TouchList').split(',');
-
-for (var i = 0; i < DOMIterables.length; i++) {
-  var NAME = DOMIterables[i];
-  var Collection = global[NAME];
-  var proto = Collection && Collection.prototype;
-  if (proto && !proto[TO_STRING_TAG]) hide(proto, TO_STRING_TAG, NAME);
-  Iterators[NAME] = Iterators.Array;
-}
-
-},{"./_global":67,"./_hide":69,"./_iterators":78,"./_wks":109,"./es6.array.iterator":110}],121:[function(require,module,exports){
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],44:[function(require,module,exports){
 var DOCUMENT_NODE_TYPE = 9;
 
 /**
@@ -4942,7 +3731,7 @@ function closest (element, selector) {
 
 module.exports = closest;
 
-},{}],122:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 var closest = require('./closest');
 
 /**
@@ -5022,307 +3811,7 @@ function listener(element, selector, type, callback) {
 
 module.exports = delegate;
 
-},{"./closest":121}],123:[function(require,module,exports){
-/**
- * EvEmitter v2.0.0
- * Lil' event emitter
- * MIT License
- */
-
-( function( global, factory ) {
-  // universal module definition
-  if ( typeof module == 'object' && module.exports ) {
-    // CommonJS - Browserify, Webpack
-    module.exports = factory();
-  } else {
-    // Browser globals
-    global.EvEmitter = factory();
-  }
-
-}( typeof window != 'undefined' ? window : this, function() {
-
-function EvEmitter() {}
-
-let proto = EvEmitter.prototype;
-
-proto.on = function( eventName, listener ) {
-  if ( !eventName || !listener ) return this;
-
-  // set events hash
-  let events = this._events = this._events || {};
-  // set listeners array
-  let listeners = events[ eventName ] = events[ eventName ] || [];
-  // only add once
-  if ( !listeners.includes( listener ) ) {
-    listeners.push( listener );
-  }
-
-  return this;
-};
-
-proto.once = function( eventName, listener ) {
-  if ( !eventName || !listener ) return this;
-
-  // add event
-  this.on( eventName, listener );
-  // set once flag
-  // set onceEvents hash
-  let onceEvents = this._onceEvents = this._onceEvents || {};
-  // set onceListeners object
-  let onceListeners = onceEvents[ eventName ] = onceEvents[ eventName ] || {};
-  // set flag
-  onceListeners[ listener ] = true;
-
-  return this;
-};
-
-proto.off = function( eventName, listener ) {
-  let listeners = this._events && this._events[ eventName ];
-  if ( !listeners || !listeners.length ) return this;
-
-  let index = listeners.indexOf( listener );
-  if ( index != -1 ) {
-    listeners.splice( index, 1 );
-  }
-
-  return this;
-};
-
-proto.emitEvent = function( eventName, args ) {
-  let listeners = this._events && this._events[ eventName ];
-  if ( !listeners || !listeners.length ) return this;
-
-  // copy over to avoid interference if .off() in listener
-  listeners = listeners.slice( 0 );
-  args = args || [];
-  // once stuff
-  let onceListeners = this._onceEvents && this._onceEvents[ eventName ];
-
-  for ( let listener of listeners ) {
-    let isOnce = onceListeners && onceListeners[ listener ];
-    if ( isOnce ) {
-      // remove listener
-      // remove before trigger to prevent recursion
-      this.off( eventName, listener );
-      // unset once flag
-      delete onceListeners[ listener ];
-    }
-    // trigger listener
-    listener.apply( this, args );
-  }
-
-  return this;
-};
-
-proto.allOff = function() {
-  delete this._events;
-  delete this._onceEvents;
-  return this;
-};
-
-return EvEmitter;
-
-} ) );
-
-},{}],124:[function(require,module,exports){
-/**
- * Fizzy UI utils v3.0.0
- * MIT license
- */
-
-( function( global, factory ) {
-  // universal module definition
-  if ( typeof module == 'object' && module.exports ) {
-    // CommonJS
-    module.exports = factory( global );
-  } else {
-    // browser global
-    global.fizzyUIUtils = factory( global );
-  }
-
-}( this, function factory( global ) {
-
-let utils = {};
-
-// ----- extend ----- //
-
-// extends objects
-utils.extend = function( a, b ) {
-  return Object.assign( a, b );
-};
-
-// ----- modulo ----- //
-
-utils.modulo = function( num, div ) {
-  return ( ( num % div ) + div ) % div;
-};
-
-// ----- makeArray ----- //
-
-// turn element or nodeList into an array
-utils.makeArray = function( obj ) {
-  // use object if already an array
-  if ( Array.isArray( obj ) ) return obj;
-
-  // return empty array if undefined or null. #6
-  if ( obj === null || obj === undefined ) return [];
-
-  let isArrayLike = typeof obj == 'object' && typeof obj.length == 'number';
-  // convert nodeList to array
-  if ( isArrayLike ) return [ ...obj ];
-
-  // array of single index
-  return [ obj ];
-};
-
-// ----- removeFrom ----- //
-
-utils.removeFrom = function( ary, obj ) {
-  let index = ary.indexOf( obj );
-  if ( index != -1 ) {
-    ary.splice( index, 1 );
-  }
-};
-
-// ----- getParent ----- //
-
-utils.getParent = function( elem, selector ) {
-  while ( elem.parentNode && elem != document.body ) {
-    elem = elem.parentNode;
-    if ( elem.matches( selector ) ) return elem;
-  }
-};
-
-// ----- getQueryElement ----- //
-
-// use element as selector string
-utils.getQueryElement = function( elem ) {
-  if ( typeof elem == 'string' ) {
-    return document.querySelector( elem );
-  }
-  return elem;
-};
-
-// ----- handleEvent ----- //
-
-// enable .ontype to trigger from .addEventListener( elem, 'type' )
-utils.handleEvent = function( event ) {
-  let method = 'on' + event.type;
-  if ( this[ method ] ) {
-    this[ method ]( event );
-  }
-};
-
-// ----- filterFindElements ----- //
-
-utils.filterFindElements = function( elems, selector ) {
-  // make array of elems
-  elems = utils.makeArray( elems );
-
-  return elems
-    // check that elem is an actual element
-    .filter( ( elem ) => elem instanceof HTMLElement )
-    .reduce( ( ffElems, elem ) => {
-      // add elem if no selector
-      if ( !selector ) {
-        ffElems.push( elem );
-        return ffElems;
-      }
-      // filter & find items if we have a selector
-      // filter
-      if ( elem.matches( selector ) ) {
-        ffElems.push( elem );
-      }
-      // find children
-      let childElems = elem.querySelectorAll( selector );
-      // concat childElems to filterFound array
-      ffElems = ffElems.concat( ...childElems );
-      return ffElems;
-    }, [] );
-};
-
-// ----- debounceMethod ----- //
-
-utils.debounceMethod = function( _class, methodName, threshold ) {
-  threshold = threshold || 100;
-  // original method
-  let method = _class.prototype[ methodName ];
-  let timeoutName = methodName + 'Timeout';
-
-  _class.prototype[ methodName ] = function() {
-    clearTimeout( this[ timeoutName ] );
-
-    let args = arguments;
-    this[ timeoutName ] = setTimeout( () => {
-      method.apply( this, args );
-      delete this[ timeoutName ];
-    }, threshold );
-  };
-};
-
-// ----- docReady ----- //
-
-utils.docReady = function( onDocReady ) {
-  let readyState = document.readyState;
-  if ( readyState == 'complete' || readyState == 'interactive' ) {
-    // do async to allow for other scripts to run. metafizzy/flickity#441
-    setTimeout( onDocReady );
-  } else {
-    document.addEventListener( 'DOMContentLoaded', onDocReady );
-  }
-};
-
-// ----- htmlInit ----- //
-
-// http://bit.ly/3oYLusc
-utils.toDashed = function( str ) {
-  return str.replace( /(.)([A-Z])/g, function( match, $1, $2 ) {
-    return $1 + '-' + $2;
-  } ).toLowerCase();
-};
-
-let console = global.console;
-
-// allow user to initialize classes via [data-namespace] or .js-namespace class
-// htmlInit( Widget, 'widgetName' )
-// options are parsed from data-namespace-options
-utils.htmlInit = function( WidgetClass, namespace ) {
-  utils.docReady( function() {
-    let dashedNamespace = utils.toDashed( namespace );
-    let dataAttr = 'data-' + dashedNamespace;
-    let dataAttrElems = document.querySelectorAll( `[${dataAttr}]` );
-    let jQuery = global.jQuery;
-
-    [ ...dataAttrElems ].forEach( ( elem ) => {
-      let attr = elem.getAttribute( dataAttr );
-      let options;
-      try {
-        options = attr && JSON.parse( attr );
-      } catch ( error ) {
-        // log error, do not initialize
-        if ( console ) {
-          console.error( `Error parsing ${dataAttr} on ${elem.className}: ${error}` );
-        }
-        return;
-      }
-      // initialize
-      let instance = new WidgetClass( elem, options );
-      // make available via $().data('namespace')
-      if ( jQuery ) {
-        jQuery.data( elem, namespace, instance );
-      }
-    } );
-
-  } );
-};
-
-// -----  ----- //
-
-return utils;
-
-} ) );
-
-},{}],125:[function(require,module,exports){
+},{"./closest":44}],46:[function(require,module,exports){
 // button
 ( function( window, factory ) {
   // universal module definition
@@ -5405,7 +3894,7 @@ return InfiniteScroll;
 
 } ) );
 
-},{"./core":126,"fizzy-ui-utils":124}],126:[function(require,module,exports){
+},{"./core":47,"fizzy-ui-utils":54}],47:[function(require,module,exports){
 // core
 ( function( window, factory ) {
   // universal module definition
@@ -5778,7 +4267,7 @@ return InfiniteScroll;
 
 } ) );
 
-},{"ev-emitter":123,"fizzy-ui-utils":124}],127:[function(require,module,exports){
+},{"ev-emitter":53,"fizzy-ui-utils":54}],48:[function(require,module,exports){
 // history
 ( function( window, factory ) {
   // universal module definition
@@ -5964,7 +4453,7 @@ return InfiniteScroll;
 
 } ) );
 
-},{"./core":126,"fizzy-ui-utils":124}],128:[function(require,module,exports){
+},{"./core":47,"fizzy-ui-utils":54}],49:[function(require,module,exports){
 /*!
  * Infinite Scroll v4.0.1
  * Automatically add next page
@@ -5994,7 +4483,7 @@ return InfiniteScroll;
   return InfiniteScroll;
 } );
 
-},{"./button":125,"./core":126,"./history":127,"./page-load":129,"./scroll-watch":130,"./status":131}],129:[function(require,module,exports){
+},{"./button":46,"./core":47,"./history":48,"./page-load":50,"./scroll-watch":51,"./status":52}],50:[function(require,module,exports){
 // page-load
 ( function( window, factory ) {
   // universal module definition
@@ -6272,7 +4761,7 @@ return InfiniteScroll;
 
 } ) );
 
-},{"./core":126}],130:[function(require,module,exports){
+},{"./core":47}],51:[function(require,module,exports){
 // scroll-watch
 ( function( window, factory ) {
   // universal module definition
@@ -6371,7 +4860,7 @@ return InfiniteScroll;
 
 } ) );
 
-},{"./core":126,"fizzy-ui-utils":124}],131:[function(require,module,exports){
+},{"./core":47,"fizzy-ui-utils":54}],52:[function(require,module,exports){
 // status
 ( function( window, factory ) {
   // universal module definition
@@ -6475,7 +4964,307 @@ return InfiniteScroll;
 
 } ) );
 
-},{"./core":126,"fizzy-ui-utils":124}],132:[function(require,module,exports){
+},{"./core":47,"fizzy-ui-utils":54}],53:[function(require,module,exports){
+/**
+ * EvEmitter v2.0.0
+ * Lil' event emitter
+ * MIT License
+ */
+
+( function( global, factory ) {
+  // universal module definition
+  if ( typeof module == 'object' && module.exports ) {
+    // CommonJS - Browserify, Webpack
+    module.exports = factory();
+  } else {
+    // Browser globals
+    global.EvEmitter = factory();
+  }
+
+}( typeof window != 'undefined' ? window : this, function() {
+
+function EvEmitter() {}
+
+let proto = EvEmitter.prototype;
+
+proto.on = function( eventName, listener ) {
+  if ( !eventName || !listener ) return this;
+
+  // set events hash
+  let events = this._events = this._events || {};
+  // set listeners array
+  let listeners = events[ eventName ] = events[ eventName ] || [];
+  // only add once
+  if ( !listeners.includes( listener ) ) {
+    listeners.push( listener );
+  }
+
+  return this;
+};
+
+proto.once = function( eventName, listener ) {
+  if ( !eventName || !listener ) return this;
+
+  // add event
+  this.on( eventName, listener );
+  // set once flag
+  // set onceEvents hash
+  let onceEvents = this._onceEvents = this._onceEvents || {};
+  // set onceListeners object
+  let onceListeners = onceEvents[ eventName ] = onceEvents[ eventName ] || {};
+  // set flag
+  onceListeners[ listener ] = true;
+
+  return this;
+};
+
+proto.off = function( eventName, listener ) {
+  let listeners = this._events && this._events[ eventName ];
+  if ( !listeners || !listeners.length ) return this;
+
+  let index = listeners.indexOf( listener );
+  if ( index != -1 ) {
+    listeners.splice( index, 1 );
+  }
+
+  return this;
+};
+
+proto.emitEvent = function( eventName, args ) {
+  let listeners = this._events && this._events[ eventName ];
+  if ( !listeners || !listeners.length ) return this;
+
+  // copy over to avoid interference if .off() in listener
+  listeners = listeners.slice( 0 );
+  args = args || [];
+  // once stuff
+  let onceListeners = this._onceEvents && this._onceEvents[ eventName ];
+
+  for ( let listener of listeners ) {
+    let isOnce = onceListeners && onceListeners[ listener ];
+    if ( isOnce ) {
+      // remove listener
+      // remove before trigger to prevent recursion
+      this.off( eventName, listener );
+      // unset once flag
+      delete onceListeners[ listener ];
+    }
+    // trigger listener
+    listener.apply( this, args );
+  }
+
+  return this;
+};
+
+proto.allOff = function() {
+  delete this._events;
+  delete this._onceEvents;
+  return this;
+};
+
+return EvEmitter;
+
+} ) );
+
+},{}],54:[function(require,module,exports){
+/**
+ * Fizzy UI utils v3.0.0
+ * MIT license
+ */
+
+( function( global, factory ) {
+  // universal module definition
+  if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory( global );
+  } else {
+    // browser global
+    global.fizzyUIUtils = factory( global );
+  }
+
+}( this, function factory( global ) {
+
+let utils = {};
+
+// ----- extend ----- //
+
+// extends objects
+utils.extend = function( a, b ) {
+  return Object.assign( a, b );
+};
+
+// ----- modulo ----- //
+
+utils.modulo = function( num, div ) {
+  return ( ( num % div ) + div ) % div;
+};
+
+// ----- makeArray ----- //
+
+// turn element or nodeList into an array
+utils.makeArray = function( obj ) {
+  // use object if already an array
+  if ( Array.isArray( obj ) ) return obj;
+
+  // return empty array if undefined or null. #6
+  if ( obj === null || obj === undefined ) return [];
+
+  let isArrayLike = typeof obj == 'object' && typeof obj.length == 'number';
+  // convert nodeList to array
+  if ( isArrayLike ) return [ ...obj ];
+
+  // array of single index
+  return [ obj ];
+};
+
+// ----- removeFrom ----- //
+
+utils.removeFrom = function( ary, obj ) {
+  let index = ary.indexOf( obj );
+  if ( index != -1 ) {
+    ary.splice( index, 1 );
+  }
+};
+
+// ----- getParent ----- //
+
+utils.getParent = function( elem, selector ) {
+  while ( elem.parentNode && elem != document.body ) {
+    elem = elem.parentNode;
+    if ( elem.matches( selector ) ) return elem;
+  }
+};
+
+// ----- getQueryElement ----- //
+
+// use element as selector string
+utils.getQueryElement = function( elem ) {
+  if ( typeof elem == 'string' ) {
+    return document.querySelector( elem );
+  }
+  return elem;
+};
+
+// ----- handleEvent ----- //
+
+// enable .ontype to trigger from .addEventListener( elem, 'type' )
+utils.handleEvent = function( event ) {
+  let method = 'on' + event.type;
+  if ( this[ method ] ) {
+    this[ method ]( event );
+  }
+};
+
+// ----- filterFindElements ----- //
+
+utils.filterFindElements = function( elems, selector ) {
+  // make array of elems
+  elems = utils.makeArray( elems );
+
+  return elems
+    // check that elem is an actual element
+    .filter( ( elem ) => elem instanceof HTMLElement )
+    .reduce( ( ffElems, elem ) => {
+      // add elem if no selector
+      if ( !selector ) {
+        ffElems.push( elem );
+        return ffElems;
+      }
+      // filter & find items if we have a selector
+      // filter
+      if ( elem.matches( selector ) ) {
+        ffElems.push( elem );
+      }
+      // find children
+      let childElems = elem.querySelectorAll( selector );
+      // concat childElems to filterFound array
+      ffElems = ffElems.concat( ...childElems );
+      return ffElems;
+    }, [] );
+};
+
+// ----- debounceMethod ----- //
+
+utils.debounceMethod = function( _class, methodName, threshold ) {
+  threshold = threshold || 100;
+  // original method
+  let method = _class.prototype[ methodName ];
+  let timeoutName = methodName + 'Timeout';
+
+  _class.prototype[ methodName ] = function() {
+    clearTimeout( this[ timeoutName ] );
+
+    let args = arguments;
+    this[ timeoutName ] = setTimeout( () => {
+      method.apply( this, args );
+      delete this[ timeoutName ];
+    }, threshold );
+  };
+};
+
+// ----- docReady ----- //
+
+utils.docReady = function( onDocReady ) {
+  let readyState = document.readyState;
+  if ( readyState == 'complete' || readyState == 'interactive' ) {
+    // do async to allow for other scripts to run. metafizzy/flickity#441
+    setTimeout( onDocReady );
+  } else {
+    document.addEventListener( 'DOMContentLoaded', onDocReady );
+  }
+};
+
+// ----- htmlInit ----- //
+
+// http://bit.ly/3oYLusc
+utils.toDashed = function( str ) {
+  return str.replace( /(.)([A-Z])/g, function( match, $1, $2 ) {
+    return $1 + '-' + $2;
+  } ).toLowerCase();
+};
+
+let console = global.console;
+
+// allow user to initialize classes via [data-namespace] or .js-namespace class
+// htmlInit( Widget, 'widgetName' )
+// options are parsed from data-namespace-options
+utils.htmlInit = function( WidgetClass, namespace ) {
+  utils.docReady( function() {
+    let dashedNamespace = utils.toDashed( namespace );
+    let dataAttr = 'data-' + dashedNamespace;
+    let dataAttrElems = document.querySelectorAll( `[${dataAttr}]` );
+    let jQuery = global.jQuery;
+
+    [ ...dataAttrElems ].forEach( ( elem ) => {
+      let attr = elem.getAttribute( dataAttr );
+      let options;
+      try {
+        options = attr && JSON.parse( attr );
+      } catch ( error ) {
+        // log error, do not initialize
+        if ( console ) {
+          console.error( `Error parsing ${dataAttr} on ${elem.className}: ${error}` );
+        }
+        return;
+      }
+      // initialize
+      let instance = new WidgetClass( elem, options );
+      // make available via $().data('namespace')
+      if ( jQuery ) {
+        jQuery.data( elem, namespace, instance );
+      }
+    } );
+
+  } );
+};
+
+// -----  ----- //
+
+return utils;
+
+} ) );
+
+},{}],55:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6571,7 +5360,7 @@ var ResponsiveAutoHeight = function () {
 
 exports.default = ResponsiveAutoHeight;
 module.exports = exports['default'];
-},{"./util":133}],133:[function(require,module,exports){
+},{"./util":56}],56:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

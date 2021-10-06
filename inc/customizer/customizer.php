@@ -22,8 +22,6 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 * @since 1.0
 		 */
 		public function __construct() {
-
-
 			add_action( 'customize_register',					array( $this, 'custom_controls' ) );
 			add_action( 'customize_register',					array( $this, 'controls_helpers' ) );
 			add_action( 'customize_register',					array( $this, 'customize_register' ), 11 );
@@ -31,10 +29,85 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			add_action( 'customize_controls_print_footer_scripts', array( $this, 'customize_panel_init' ) );
 			add_action( 'customize_preview_init', 				array( $this, 'customize_preview_init' ) );
 			add_action( 'customize_render_panel', 				array( $this, 'render_tabs' ) );
-			// add_action( 'customize_render_panel', 				array( $this, 'render_search' ) );
-			add_action( 'customize_controls_enqueue_scripts', 	array( $this, 'custom_customize_enqueue' ), 7 );
+			add_action( 'wp_loaded', 				            array( $this, 'customizer_controls_object' ), 50 );
+			add_action( 'wp_ajax_ocean-update-customize-settings', array( $this, 'update_customize_settings' ) );
+			add_action( 'customize_controls_enqueue_scripts',   array( $this, 'custom_customize_enqueue' ), 7 );
+			add_action( 'deactivated_plugin',   array( $this, 'clear_customize_controls_list' ));
+			add_action( 'activated_plugin',   array( $this, 'clear_customize_controls_list' ));
 			add_action( 'customize_controls_print_scripts', 'ocean_get_svg_icon' );
+
 			require_once( OCEANWP_INC_DIR . 'customizer/settings/isolation.php' );
+		}
+
+		/**
+		 * Update Customizer Settings
+		 *
+		 * @since 1.0.0
+		 */
+		public function update_customize_settings() {
+			$data = esc_attr( $_REQUEST['settings'] );
+			update_option( 'ocean_wpCustomizeSettings', $data );
+			wp_send_json_success();
+		}
+
+		/**
+		 * Clear Customizer Controls Settings
+		 *
+		 * @since 1.0.0
+		 */
+		public function clear_customize_controls_list() {
+			delete_option( 'ocean_wpCustomizeSettings');
+		}
+
+		/**
+		 * Customizer Controls
+		 *
+		 * @since 1.0.0
+		 */
+		public function customizer_controls_object() {
+
+			if ( isset($_REQUEST['ocean_action']) && $_REQUEST['ocean_action'] === 'get_controls' ) {
+				global $wp_customize;
+
+				$controls = [];
+				foreach ( $wp_customize->controls() as $control ) {
+					if ( $control->check_capabilities() ) {
+						$data = $control->json();
+						unset( $data['content']);
+						// $controls[ $control->id ] = $data;
+						$controls[ $control->id ] = [
+							'settings' => $data['settings'],
+							'section' => $data['section'],
+							'content' => '',
+							'label' => $data['label'],
+							'panel' => @$data['panel'],
+						];
+					}
+				}
+
+				$panels = [];
+				foreach ( $wp_customize->panels() as $panel ) {
+					if ( $panel->check_capabilities() ) {
+						$panels[ $panel->id ] = $panel->json();
+					}
+				}
+
+				$sections = [];
+				foreach ( $wp_customize->sections() as $section ) {
+					if ( $section->check_capabilities() ) {
+						$sections[ $section->id ] = $section->json();
+					}
+				}
+
+				wp_send_json( [
+					'controls' => $controls,
+					'sections' => $sections,
+					'panels'   => $panels,
+				] );
+
+				wp_die();
+			}
+
 		}
 
 		/**
@@ -56,7 +129,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		public function render_tabs() {
 			remove_action( 'customize_render_panel', array( $this, 'render_tabs' ) );
 			$tabs = array(
-				'default' => __('Default', 'oceanwp'),
+				'default' => __('Default WordPress Options', 'oceanwp'),
 				'general' => __('General Options', 'oceanwp'),
 				'header' => __('Header', 'oceanwp'),
 				'blog' => __('Blog', 'oceanwp'),
@@ -74,7 +147,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			$list = '';
 			foreach ($tabs as $id => $label) {
 				// $url   = admin_url('customize.php?oceanwp-customizer-part=' . $id);
-				$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : 'header-footer';
+				$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : 'general';
 				$selected = "";
 				if ( $type === $id ) {
 					$selected = "selected=\"selected\"";
@@ -292,12 +365,26 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 */
 		public function customize_panel_init() {
 			wp_enqueue_script( 'oceanwp-customize-search-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.js', array( 'lodash', 'wp-i18n', 'wp-util' ) );
+			// delete_option( 'ocean_wpCustomizeSettings' );
+			$data = get_option( 'ocean_wpCustomizeSettings', [] );
+			if ( $data ) {
+				$data = htmlspecialchars_decode( $data );
+				$data = strip_tags( $data );
+				$data = str_replace( [ '&quot;' ], '"', $data );
+				$data = str_replace( '/', '\/', $data );
+				$data = str_replace( '"', '\"', $data );
+				$data = str_replace( '\\\\"', '"', $data );
+				$data = str_replace( '\\\\"', '\"', $data );
+				$data = json_decode( $data );
+			}
+
+			wp_localize_script( 'oceanwp-customize-search-js', 'oceanwpTG', array(
+				'wpCustomizeSettings' => $data
+			) );
+
+
 			wp_enqueue_script( 'oceanwp-customize-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize.js', array( 'jquery' ) );
 			wp_enqueue_style( 'oceanwp-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customize-preview.min.css');
-			wp_localize_script( 'oceanwp-customize-preview', 'oceanwpTG', array(
-				'googleFontsUrl' 	=> '//fonts.googleapis.com',
-				'googleFontsWeight' => '100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i',
-			) );
 		}
 
 		/**
@@ -340,6 +427,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			wp_enqueue_style( 'oceanwp-general', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/general.min.css' );
 			wp_enqueue_style( 'oceanwp-customize-search', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.css' );
 			wp_enqueue_script( 'oceanwp-general', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/general.min.js', array( 'jquery', 'customize-base' ), false, true );
+
 
 			if ( is_rtl() ) {
 				wp_enqueue_style( 'oceanwp-controls-rtl', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/rtl.min.css' );

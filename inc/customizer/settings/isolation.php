@@ -29,8 +29,14 @@ if ( ! class_exists( 'OceanWP_Isolation_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public function unload_default_components( $wp_customize ) {
+
 			$default_type = 'all';
+			if ( basename( $_SERVER['PHP_SELF'] ) === 'customize.php' ){
+				$default_type = 'general';
+			}
+
 			$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : $default_type;
+
 			if( $type !== 'all' && $type !== 'default') {
 				// Unload Nav Menu Panel
 				if ( isset( $wp_customize->nav_menus ) && is_object( $wp_customize->nav_menus ) ) {
@@ -63,7 +69,12 @@ if ( ! class_exists( 'OceanWP_Isolation_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public function optimize_customizer( $wp_customize ) {
+
 			$default_type = 'all';
+			if ( basename( $_SERVER['PHP_SELF'] ) === 'customize.php' ){
+				$default_type = 'general';
+			}
+
 			$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : $default_type;
 			if( $type !== 'all' && $type !== 'default') {
 				$wp_customize->remove_section( 'title_tagline' );
@@ -71,12 +82,6 @@ if ( ! class_exists( 'OceanWP_Isolation_Customizer' ) ) :
 				$wp_customize->remove_section( 'header_image' );
 				$wp_customize->remove_section( 'background_image' );
 				$wp_customize->remove_section( 'static_front_page' );
-				// $wp_customize->remove_panel( 'nav_menus' );
-				// $wp_customize->remove_panel( 'widgets' );
-				// $wp_customize->get_panel( 'nav_menus' )->active_callback = '__return_false';
-				// $wp_customize->get_panel( 'widgets' )->active_callback = '__return_false';
-
-
 				$wp_customize->remove_section( 'custom_css' );
 			}
 		}

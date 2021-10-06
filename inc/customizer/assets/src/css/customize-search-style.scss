@@ -8,6 +8,10 @@ body {
     li.ocean-control-focused {
         box-shadow: -6px 0px 0px #eee, -10px 0px 0px #2ee500;
     }
+
+    .modal-backdrop {
+        z-index: 99999999999;
+    }
 }
 #ocean-wp-customize-search, .ocean-customize-search-modal {
     @import 'node_modules/bootstrap/scss/reboot';
@@ -23,7 +27,7 @@ body {
     // @import 'node_modules/bootstrap/scss/card';
     @import 'node_modules/bootstrap/scss/alert';
     // @import 'node_modules/bootstrap/scss/close';
-    // @import 'node_modules/bootstrap/scss/spinners';
+    @import 'node_modules/bootstrap/scss/spinners';
     // @import 'node_modules/bootstrap/scss/progress';
     // @import 'node_modules/bootstrap/scss/tables';
     // @import 'node_modules/bootstrap/scss/pagination';
@@ -35,6 +39,10 @@ body {
     // @import 'node_modules/bootstrap/scss/nav';
 
     .modal-header {
+
+        .modal-title {
+            margin: 0 !important;
+        }
 
         button.close {
             border: none;
@@ -52,6 +60,15 @@ body {
 
         .list-group {
             margin-top: 15px;
+        }
+
+        .badge.btn-success, .badge.btn-warning {
+            margin-right: 5px;
+        }
+
+        .text-muted {
+            display: block;
+            font-style: italic;
         }
     }
 }
