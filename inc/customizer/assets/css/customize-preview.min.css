@@ -20,6 +20,7 @@ ul.customize-pane-parent li[id="accordion-section-oceanwp_upsell_section"] {
     overflow: hidden;
     display: flex !important;
     flex-direction: column;
+    max-width: 100% !important;
     border-radius: 0 !important;
     border: none !important;
     border-bottom: solid 2px #5277fe !important;
