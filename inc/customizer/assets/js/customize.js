@@ -14,6 +14,7 @@ jQuery( document ).on( 'ready', function (e) {
         var type = jQuery(this).val();
         if( doRedirection === true ) {
             var refresh = window.location.protocol + "//" + window.location.host + window.location.pathname + '?oceanwp-customizer-part=' + type;
+            jQuery( 'body' ).css( 'filter', 'blur(4px)' );
             window.history.replaceState({ path: refresh }, '', refresh);
             document.location.replace( refresh );
         }

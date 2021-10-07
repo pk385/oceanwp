@@ -2,6 +2,10 @@ ul.customize-pane-parent {
     display: flex;
     flex-direction: column;
 }
+#accordion-section-oceanwp_upsell_section,
+#accordion-section-freemius_upsell{
+    order: -99999999;
+}
 
 ul.customize-pane-parent li[id*="accordion-section-ocean"], ul.customize-pane-parent li[id*="accordion-panel-ocean"] {
     order: -99999;
