@@ -5,7 +5,7 @@ import SearchBoxModal from "./modal";
 const SearchBox = ( { ...props } ) => {
 
     return <div className="ocean-customizer-search-box-wrap">
-        <SearchBoxModal show = { props.show } showProgress = { props.showProgress } onHide = { props.onHide } SearchHandler = { props.searchHandler } ></SearchBoxModal>
+        <SearchBoxModal show = { props.show } onHide = { props.onHide } SearchHandler = { props.searchHandler } ></SearchBoxModal>
     </div>;
 
 }

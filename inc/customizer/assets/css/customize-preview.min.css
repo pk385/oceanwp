@@ -7,8 +7,10 @@ ul.customize-pane-parent {
     order: -99999999;
 }
 
-ul.customize-pane-parent li[id*="accordion-section-ocean"], ul.customize-pane-parent li[id*="accordion-panel-ocean"] {
-    order: -99999;
+.image_radio_button_control label.radio-button-label {
+    display: inline-block;
+    width: calc( 50% - 10px);
+    margin: 5px 5px 0 0;
 }
 
 ul.customize-pane-parent li[id="accordion-section-oceanwp_upsell_section"] {

@@ -9,30 +9,28 @@ var _SearchHandler;
 
 const CustomizeSearch = () => {
 
-    const [ showProgress, setShowProgress ] = React.useState( true );
-    const [ showModal, setshowModal ] = React.useState( false );
+    const [ showModal, setShowModal ] = React.useState( false );
 
-    _SearchHandler.setShowProgress( setShowProgress );
     /**
      * Hide Modal
      */
     const handleShowModal = () => {
-        setshowModal( false );
+        setShowModal( false );
     }
 
     return <>
         <a className="customize-controls-ocean-search dashicons dashicons-search"
             onClick = { () => {
-                setshowModal( true );
+                setShowModal( true );
                 return false;
             }}>
             <span className="screen-reader-text">{ __( 'Search' ) }</span>
         </a>
-        { showModal ? <SearchBox show = { showModal } showProgress = { showProgress } onHide = { handleShowModal } searchHandler = { _SearchHandler } ></SearchBox> : '' }
+        { showModal ? <SearchBox show = { showModal } onHide = { handleShowModal } searchHandler = { _SearchHandler } ></SearchBox> : '' }
     </>;
 }
 
-jQuery( window ).on('load', function() {
+jQuery( document ).on( 'ready', function() {
     _SearchHandler = new SearchHandler( );
     jQuery('#customize-header-actions').append("<div id=\"ocean-wp-customize-search\"></div>");
     render( <CustomizeSearch></CustomizeSearch>, document.getElementById( 'ocean-wp-customize-search' ) );

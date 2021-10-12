@@ -202,12 +202,12 @@ input[type="number"]:focus {
 	cursor: pointer;
 }
 
-.pill_checkbox_control .checkbox-label > input:checked + .sortable-pill-title { 
+.pill_checkbox_control .checkbox-label > input:checked + .sortable-pill-title {
 	background-color: #2084bd;
 	color: #fff;
 }
 
-.pill_checkbox_control .checkbox-label > input:checked + .sortable-pill-title:before { 
+.pill_checkbox_control .checkbox-label > input:checked + .sortable-pill-title:before {
 	display: inline-block;
 	font-style: normal;
 	font-variant: normal;
@@ -282,7 +282,7 @@ input[type="number"]:focus {
 }
 
 .slider-custom-control  .customize-control-title {
-	display: inline-block;
+	display: block;
 }
 
 .slider-custom-control input[type=number] {
@@ -358,6 +358,7 @@ input[type="number"]:focus {
 .slider-custom-control .ui-slider {
 	position: relative;
 	text-align: left;
+	width: calc(100% - 70px) !important;
 }
 
 .slider-custom-control .ui-state-default,
