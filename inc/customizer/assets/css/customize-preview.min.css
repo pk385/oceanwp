@@ -9,7 +9,7 @@ ul.customize-pane-parent {
 
 .image_radio_button_control label.radio-button-label {
     display: inline-block;
-    width: calc( 50% - 10px);
+    width: calc( 33% - 10px);
     margin: 5px 5px 0 0;
 }
 

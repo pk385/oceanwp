@@ -1,4 +1,5 @@
-jQuery( document ).ready(function($) {
+jQuery( document ).on('oceanready', function() {
+	var $ = jQuery;
 	"use strict";
 
 	/**
