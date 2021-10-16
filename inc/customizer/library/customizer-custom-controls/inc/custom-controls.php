@@ -57,7 +57,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -100,7 +100,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -144,7 +144,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -186,8 +186,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'skyrocket-custom-controls-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/customizer.js', array( 'jquery' ), '1.0', true );
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery' ), '1.0', true );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -292,8 +292,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'skyrocket-custom-controls-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -325,7 +325,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue(){
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -381,8 +381,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'skyrocket-custom-controls-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -446,10 +446,10 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'skyrocket-select2-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/select2.full.min.js', array( 'jquery' ), '4.0.13', true );
-			wp_enqueue_script( 'skyrocket-custom-controls-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/customizer.js', array( 'skyrocket-select2-js' ), '1.0', true );
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.1', 'all' );
-			wp_enqueue_style( 'skyrocket-select2-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/select2.min.css', array(), '4.0.13', 'all' );
+			wp_enqueue_script( 'skyrocket-select2-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/select2.full.min.js', array( 'jquery' ), '4.0.13', true );
+			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'skyrocket-select2-js' ), '1.0', true );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.1', 'all' );
+			wp_enqueue_style( 'skyrocket-select2-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/select2.min.css', array(), '4.0.13', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -577,8 +577,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue(){
-			wp_enqueue_script( 'skyrocket-custom-controls-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/customizer.js', array( 'jquery' ), '1.0', true );
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery' ), '1.0', true );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 			wp_enqueue_editor();
 		}
 		/**
@@ -663,10 +663,10 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'skyrocket-select2-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/select2.full.min.js', array( 'jquery' ), '4.0.13', true );
-			wp_enqueue_script( 'skyrocket-custom-controls-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/customizer.js', array( 'skyrocket-select2-js' ), '1.0', true );
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.1', 'all' );
-			wp_enqueue_style( 'skyrocket-select2-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/select2.min.css', array(), '4.0.13', 'all' );
+			wp_enqueue_script( 'skyrocket-select2-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/select2.full.min.js', array( 'jquery' ), '4.0.13', true );
+			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'skyrocket-select2-js' ), '1.0', true );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.1', 'all' );
+			wp_enqueue_style( 'skyrocket-select2-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/select2.min.css', array(), '4.0.13', 'all' );
 		}
 		/**
 		 * Export our List of Google Fonts to JavaScript
@@ -785,9 +785,9 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 */
 		public function skyrocket_getGoogleFonts( $count = 30 ) {
 			// Google Fonts json generated from https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=YOUR-API-KEY
-			$fontFile = $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/inc/google-fonts-alphabetical.json';
+			$fontFile = OCEANWP_INC_DIR_URI . 'customizer/assets/inc/google-fonts-alphabetical.json';
 			if ( $this->fontOrderBy === 'popular' ) {
-				$fontFile = $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/inc/google-fonts-popularity.json';
+				$fontFile = OCEANWP_INC_DIR_URI . 'customizer/assets/inc/google-fonts-popularity.json';
 			}
 
 			$request = wp_remote_get( $fontFile );
@@ -834,8 +834,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		public function enqueue() {
 			wp_enqueue_style( 'wp-color-picker' );
     		wp_enqueue_script( 'wp-color-picker');
-			wp_enqueue_script( 'skyrocket-custom-controls-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/customizer.js', array( 'jquery', 'wp-color-picker' ), '1.0', true );
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array( 'wp-color-picker' ), '1.0', 'all' );
+			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery', 'wp-color-picker' ), '1.0', true );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array( 'wp-color-picker' ), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -917,8 +917,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
-			wp_enqueue_script( 'wp-color-picker-alpha', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/wp-color-picker-alpha-min.js', array( 'wp-color-picker' ), '1.0', true );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'wp-color-picker-alpha', OCEANWP_INC_DIR_URI . 'customizer/assets/js/wp-color-picker-alpha-min.js', array( 'wp-color-picker' ), '1.0', true );
 			wp_enqueue_style( 'wp-color-picker' );
 		}
 		/**
@@ -983,8 +983,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'skyrocket-custom-controls-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.1', true );
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.1', true );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -1059,8 +1059,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'skyrocket-custom-controls-js', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/js/customizer.js', array( 'jquery' ), '1.0', true );
-			wp_enqueue_style( 'skyrocket-custom-controls-css', $this->get_skyrocket_resource_url() . '/assets/customizer-custom-control/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery' ), '1.0', true );
+			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the section, and the controls that have been added to it.
