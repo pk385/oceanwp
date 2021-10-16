@@ -1,14 +1,10 @@
-
-
 jQuery( document ).on( 'ready', function (e) {
     "use strict";
 
-    // _wpCustomizeSettings.controls = {};
     var controls = {};
     var sections = {};
     Object.keys(_wpCustomizeSettings.controls).map(function( i ) {
         let section = _wpCustomizeSettings.controls[ i ]['section'];
-        // let panel = _wpCustomizeSettings.controls[ i ]['panel'];
         if ( typeof sections [ section ] === 'undefined' ) {
             sections [ section ] = true;
             return true;
@@ -38,7 +34,6 @@ jQuery( document ).on( 'ready', function (e) {
                 })
 
                 if ( added ) {
-                    console.log('oceanready');
                     jQuery( document ).trigger('oceanready');
                 }
             } )
