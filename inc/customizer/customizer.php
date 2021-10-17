@@ -217,23 +217,6 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			if ( isset( $settings['customizer-search'] ) && (bool) $settings['customizer-search'] === true ) {
 				wp_enqueue_script( 'oceanwp-customize-search-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.js', array( 'lodash', 'wp-i18n', 'wp-util' ) );
 				wp_enqueue_style( 'oceanwp-customize-search', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.css' );
-				// delete_option( 'ocean_wpCustomizeSettings' );
-				$data = get_option( 'ocean_wpCustomizeSettings', [] );
-				if ( $data ) {
-					$data = htmlspecialchars_decode( $data );
-					$data = strip_tags( $data );
-					$data = str_replace( [ '&quot;' ], '"', $data );
-					$data = str_replace( '/', '\/', $data );
-					$data = str_replace( '"', '\"', $data );
-					$data = str_replace( '\\\\"', '"', $data );
-					$data = str_replace( '\\\\"', '\"', $data );
-					$data = json_decode( $data );
-				}
-
-				wp_localize_script( 'oceanwp-customize-search-js', 'oceanwpTG', array(
-					'wpCustomizeSettings' => $data
-				) );
-
 			}
 
 
