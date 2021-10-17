@@ -92,7 +92,7 @@ const SearchBoxModal = ( { ...props } ) => {
             aria-labelledby="contained-modal-title-vcenter"
             centered>
             <Modal.Header closeButton>
-                <Modal.Title>{ __( "OceanWp - Customize Finder" ) }</Modal.Title>
+                <Modal.Title>{ __( "OceanWP - Customize Finder" ) }</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form.Group className="mb-3" controlId="search">

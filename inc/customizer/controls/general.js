@@ -1,5 +1,5 @@
 jQuery(document).on('oceanready', function() {
-
+	var $ = jQuery;
 	// Responsive switchers
 	$( '.customize-control .responsive-switchers button:not(.ocean-proccessed)' ).on( 'click', function( event ) {
 

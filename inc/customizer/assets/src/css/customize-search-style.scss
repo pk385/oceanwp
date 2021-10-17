@@ -38,7 +38,15 @@ body {
     // @import 'node_modules/bootstrap/scss/custom-forms';
     // @import 'node_modules/bootstrap/scss/nav';
 
+    .modal-content {
+        background-color: #06214E;
+        color: #fff;
+    }
+
     .modal-header {
+        background-color: #06214E;
+        color: #fff;
+        border-color: #0442a9;
 
         .modal-title {
             margin: 0 !important;
@@ -48,11 +56,14 @@ body {
             border: none;
             background: none;
             font-size: 22px;
-            color: #3c434a;
+            color: #fff;
         }
     }
 
     .modal-body {
+
+        background-color: #06214E;
+        color: #fff;
 
         .form-control {
             height: 43px;

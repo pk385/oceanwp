@@ -57,10 +57,10 @@ class SearchHandler {
 
             const regex = new RegExp(string, 'gi');
 
-            if ( typeof control.content !== 'undefined' ) {
-                if ( control.content.match(regex) )
-                    return control.content.match(regex);
-            }
+            // if ( typeof control.content !== 'undefined' ) {
+            //     if ( control.content.match(regex) )
+            //         return control.content.match(regex);
+            // }
 
             if ( typeof control.label !== 'undefined' ) {
                 if ( control.label.match(regex) )
