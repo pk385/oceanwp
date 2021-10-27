@@ -5,12 +5,14 @@ body {
     .modal {
         z-index: 99999999999 !important;
     }
+
     li.ocean-control-focused {
-        box-shadow: -6px 0px 0px #eee, -10px 0px 0px #2ee500;
+        box-shadow: 4px 0px 0px #eee, -10px 0px 0px #06214e;
     }
 
     .modal-backdrop {
         z-index: 99999999999;
+        background: #f3f2f6 !important;
     }
 }
 #ocean-wp-customize-search, .ocean-customize-search-modal {
@@ -41,12 +43,26 @@ body {
     .modal-content {
         background-color: #06214E;
         color: #fff;
+        border-radius: 5px !important;
+        overflow: hidden;
+        box-shadow: 0px 40px 60px -46px #000000;
+
+        input#ocean-wp-customize-search-input:focus {
+            box-shadow: 0px 0px 90px -17px #ffffffed;
+            border-color: #ddd;
+        }
+
+        span.badge {
+            border-radius: 2px;
+            padding: 3px 4px 3px 4px;
+            margin: 4px 0px 2px 0px;
+        }
     }
 
     .modal-header {
         background-color: #06214E;
         color: #fff;
-        border-color: #0442a9;
+        border: none;
 
         .modal-title {
             margin: 0 !important;

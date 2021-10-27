@@ -11,7 +11,7 @@
 	background-color: #fcfcff;
 	position: relative;
 	border-radius: 0;
-	height: 27px;
+	height: 32px;
 	line-height: 27px;
 	outline: none;
 	-webkit-box-shadow: none;
@@ -699,7 +699,7 @@ input[type="number"]:focus {
 	height: 24px;
 	width: 100%;
 	background-color: #fff;
-	background-image: url(../images/color-picker-transparency-grid.png);
+	background-image: url(../img/color-picker-transparency-grid.png);
 	box-shadow: 0 0 5px rgba(0,0,0,0.4) inset;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;

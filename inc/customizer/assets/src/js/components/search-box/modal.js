@@ -20,19 +20,23 @@ const SearchBoxModal = ( { ...props } ) => {
         setsearchResults( '' );
         jQuery( '.ocean-customize-search-modal' ).parent().fadeOut();
         jQuery( '.modal-backdrop.show' ).removeClass( 'show' );
-        jQuery( '#customize-control-' + ElementID ).addClass( 'ocean-control-focused' );
 
         setTimeout( function() {
             jQuery( '.ocean-customize-search-modal .modal-header button.close' ).trigger( 'click' ).trigger( 'mouseup' )
             if ( jQuery( '#customize-control-' + ElementID ).length ) {
+
+                jQuery( '#customize-controls .wp-full-overlay-sidebar-content' ).scrollTop(0);
+
                 jQuery( '#customize-controls .wp-full-overlay-sidebar-content' ).animate(
                     { scrollTop: jQuery( '#customize-control-' + ElementID ).offset().top - 50 }
                 , "slow" );
+
+                jQuery( '#customize-control-' + ElementID ).addClass( 'ocean-control-focused' );
             }
         }, 1500 )
 
         setTimeout( () => {
-            jQuery( '#customize-control-' + ElementID ).removeClass( 'ocean-control-focused' );
+            jQuery( '.ocean-control-focused' ).removeClass( 'ocean-control-focused' );
         }, 8000 );
     }
 
@@ -95,7 +99,7 @@ const SearchBoxModal = ( { ...props } ) => {
                 <Modal.Title>{ __( "OceanWP - Customize Finder" ) }</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form.Group className="mb-3" controlId="search">
+                <Form.Group className="mb-3" controlId="ocean-wp-customize-search-input">
                     <Form.Control type="text" placeholder={ __( "Search..." ) } onChange={ onSearch } />
                 </Form.Group>
                 <ListGroup className="mt-4">

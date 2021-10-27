@@ -57,39 +57,38 @@ wp.customize.controlConstructor['oceanwp-dimensions'] = wp.customize.Control.ext
 
 });
 
-jQuery( document ).ready( function($) {
-
+jQuery(document).on( 'ready', function() {
+	var $ = jQuery;
 	// Linked button
-	$( '.oceanwp-linked' ).on( 'click', function() {
-		
+	jQuery( document ).on( 'click', '.oceanwp-linked', function() {
 		// Set up variables
 		var $this = $( this );
-		
+
 		// Remove linked class
 		$this.parent().parent( '.dimension-wrap' ).prevAll().slice(0,4).find( 'input' ).removeClass( 'linked' ).attr( 'data-element', '' );
-		
+
 		// Remove class
 		$this.parent( '.link-dimensions' ).removeClass( 'unlinked' );
 
 	} );
-	
+
 	// Unlinked button
-	$( '.oceanwp-unlinked' ).on( 'click', function() {
+	jQuery( document ).on( 'click', '.oceanwp-unlinked', function() {
 
 		// Set up variables
 		var $this 		= $( this ),
 			$element 	= $this.data( 'element' );
-		
+
 		// Add linked class
 		$this.parent().parent( '.dimension-wrap' ).prevAll().slice(0,4).find( 'input' ).addClass( 'linked' ).attr( 'data-element', $element );
-		
+
 		// Add class
 		$this.parent( '.link-dimensions' ).addClass( 'unlinked' );
 
 	} );
-	
+
 	// Values linked inputs
-	$( '.dimension-wrap' ).on( 'input', '.linked', function() {
+	jQuery( document ).on( 'input', '.dimension-wrap .linked', function() {
 
 		var $data 	= $( this ).attr( 'data-element' ),
 			$val 	= $( this ).val();
