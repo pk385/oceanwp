@@ -47,46 +47,129 @@ body {
         overflow: hidden;
         box-shadow: 0px 40px 60px -46px #000000;
 
-        input#ocean-wp-customize-search-input:focus {
-            box-shadow: 0px 0px 90px -17px #ffffffed;
-            border-color: #ddd;
+
+        button.list-group-item {
+            background: #072250 !important;
+            color: #fff !important;
+            border: none !important;
+            margin-bottom: 0px;
+            border-radius: 0px !important;
+            line-height:1.6;
+            padding-top: 10px;
+            animation: oceanFadeIn 0.4s;
+
+            span.dashicons.dashicons-editor-break {
+                float: right;
+                color: #072250;
+                visibility: hidden;
+            }
+
+            span.badge {
+                float: left;
+                top: -2px;
+                position: relative;
+                margin-right: 8px;
+                background-color: #ededed;
+                padding: 4px 6px;
+                border-radius: 2px;
+                margin: 4px 8px 2px 0px;
+                color: #000000;
+                font-weight: 500;
+
+                span.dashicons.dashicons-arrow-right-alt2 {
+                    font-size: 10px;
+                    line-height: 1;
+                    height: 10px;
+                    width: 12px;
+                    color: #2ea1fb;
+                }
+            }
         }
 
-        span.badge {
-            border-radius: 2px;
-            padding: 3px 4px 3px 4px;
-            margin: 4px 0px 2px 0px;
+        button.list-group-item:hover {
+            background: #d9e8ff !important;
+            color: #072250 !important;
+
+            span.badge {
+                background-color: #f8f9fc;
+                color:#2ea1fb;
+
+                span.dashicons.dashicons-arrow-right-alt2 {
+                    color: #072250;
+                }
+            }
+
+            span.dashicons.dashicons-editor-break {
+                visibility: visible;
+            }
         }
+
     }
 
     .modal-header {
         background-color: #06214E;
         color: #fff;
         border: none;
+        height: 60px;
+        position:relative;
 
-        .modal-title {
-            margin: 0 !important;
+        .full-width {
+            width: 100%;
+            i.dashicons.dashicons-search:before {
+                font-size:30px;
+                color: #d9e8ff;
+            }
+
+            input#ocean-wp-customize-search-input {
+                width: 100%;
+                float: right;
+                line-height: 2;
+                background-color: #06214e;
+                border: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                padding-left: 70px;
+                z-index: 3;
+                color: #fff;
+                font-size: 25px;
+                font-weight:200
+            }
+
+            input#ocean-wp-customize-search-input:focus {
+                box-shadow: none !important;
+            }
+
+            input#ocean-wp-customize-search-input::placeholder {
+                color: #d9e8ff !important;
+            }
+
+            i.dashicons.dashicons-search {
+                z-index: 5;
+                position: relative;
+                top: -5px;
+            }
         }
+
 
         button.close {
             border: none;
             background: none;
             font-size: 22px;
             color: #fff;
+            z-index: 5;
+            position: relative;
         }
     }
 
     .modal-body {
-
+        padding: 0px !important;
         background-color: #06214E;
         color: #fff;
 
         .form-control {
             height: 43px;
-        }
-
-        .list-group {
-            margin-top: 15px;
         }
 
         .badge.btn-success, .badge.btn-warning {
@@ -97,6 +180,15 @@ body {
             display: block;
             font-style: italic;
         }
+    }
+}
+
+@keyframes oceanFadeIn{
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
     }
 }
 

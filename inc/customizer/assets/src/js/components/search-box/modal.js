@@ -73,13 +73,15 @@ const SearchBoxModal = ( { ...props } ) => {
                 onClick      = { () => { ClickHandler( data.section, data.settings.default ) } }
                 action>
 
+                <Badge className="btn-primary">
+                    { data.panelName }
+                    { data.sectionName ? <span className="dashicons dashicons-arrow-right-alt2"></span> : '' }
+                    { data.sectionName ? data.sectionName : '' }
+                </Badge>
+
                 <span>{ String(data.label) }</span>
 
-                <br />
-
-                <Badge className="btn-primary">
-                    { data.panelName }{ data.sectionName ? " ‎» " + data.sectionName : '' }
-                </Badge>
+                <span className="dashicons dashicons-editor-break"></span>
 
             </ListGroup.Item>
         })
@@ -96,15 +98,18 @@ const SearchBoxModal = ( { ...props } ) => {
             aria-labelledby="contained-modal-title-vcenter"
             centered>
             <Modal.Header closeButton>
-                <Modal.Title>{ __( "OceanWP - Customize Finder" ) }</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <Form.Group className="mb-3" controlId="ocean-wp-customize-search-input">
+                <Form.Group className="full-width" controlId="ocean-wp-customize-search-input">
+                    <i className="dashicons dashicons-search"></i>
                     <Form.Control type="text" placeholder={ __( "Search..." ) } onChange={ onSearch } />
                 </Form.Group>
-                <ListGroup className="mt-4">
-                    { searchResults }
-                </ListGroup>
+                {/* <Modal.Title>{ __( "OceanWP - Customize Finder" ) }</Modal.Title> */}
+            </Modal.Header>
+            <Modal.Body>
+            { searchResults ?
+                    <ListGroup>
+                        { searchResults }
+                    </ListGroup>
+            : ""}
             </Modal.Body>
         </Modal>
     </>
