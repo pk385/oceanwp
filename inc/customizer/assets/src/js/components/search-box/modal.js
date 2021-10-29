@@ -7,6 +7,15 @@ const SearchBoxModal = ( { ...props } ) => {
 
     const [ searchResults, setsearchResults ] = React.useState( '' );
 
+    const switchThemeMode = () => {
+        oceanCustomizerSearchOptions.lightMode = ! oceanCustomizerSearchOptions.lightMode;
+        jQuery( '.modal-dialog.ocean-customize-search-modal' ).toggleClass( 'light-theme' );
+
+        wp.ajax.post( 'ocean_update_search_box_light_mode', {
+            lightMode: oceanCustomizerSearchOptions.lightMode
+        } );
+    }
+
     /**
      * Hide the Finder &
      * Expand Customize Sections When Click on Each Item
@@ -20,6 +29,7 @@ const SearchBoxModal = ( { ...props } ) => {
         setsearchResults( '' );
         jQuery( '.ocean-customize-search-modal' ).parent().fadeOut();
         jQuery( '.modal-backdrop.show' ).removeClass( 'show' );
+        props.onHide();
 
         setTimeout( function() {
             jQuery( '.ocean-customize-search-modal .modal-header button.close' ).trigger( 'click' ).trigger( 'mouseup' )
@@ -91,18 +101,21 @@ const SearchBoxModal = ( { ...props } ) => {
 
     return <>
         <Modal
-            size="lg"
+            size = "lg"
             show = { props.show }
             onHide = { props.onHide }
-            dialogClassName="ocean-customize-search-modal"
-            aria-labelledby="contained-modal-title-vcenter"
+            dialogClassName = {
+                oceanCustomizerSearchOptions.lightMode === '1'
+                || oceanCustomizerSearchOptions.lightMode === 'true'
+                || oceanCustomizerSearchOptions.lightMode === true ? "ocean-customize-search-modal light-theme" : "ocean-customize-search-modal" }
+            aria-labelledby = "contained-modal-title-vcenter"
             centered>
             <Modal.Header closeButton>
                 <Form.Group className="full-width" controlId="ocean-wp-customize-search-input">
                     <i className="dashicons dashicons-search"></i>
                     <Form.Control type="text" placeholder={ __( "Search..." ) } onChange={ onSearch } />
+                    <span onClick={ switchThemeMode } className="dashicons dashicons-lightbulb"></span>
                 </Form.Group>
-                {/* <Modal.Title>{ __( "OceanWP - Customize Finder" ) }</Modal.Title> */}
             </Modal.Header>
             <Modal.Body>
             { searchResults ?
