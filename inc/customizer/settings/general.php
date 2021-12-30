@@ -3690,6 +3690,31 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			);
 
 			/**
+			 * Page 404 Logo
+			 */
+			$wp_customize->add_setting(
+				'ocean_404_logo', 
+				array(
+					'default'           => '',
+					'sanitize_callback' => 'oceanwp_sanitize_image',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
+				$wp_customize,
+				'ocean_404_logo',
+				array(
+					'label'	   				=> esc_html__( '404 Logo', 'oceanwp' ),
+					'description'	 		=> esc_html__( 'Select a 404 logo.', 'oceanwp' ),
+					'section'     			=> 'ocean_general_error_page',
+					'settings' 				=> 'ocean_404_logo',
+					'priority' 				=> 10,
+					),
+				)
+			);
+
+			/**
 			 * Layout
 			 */
 			$wp_customize->add_setting(
