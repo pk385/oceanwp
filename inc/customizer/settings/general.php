@@ -3710,7 +3710,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 					'section'     			=> 'ocean_general_error_page',
 					'settings' 				=> 'ocean_404_logo',
 					'priority' 				=> 10,
-					),
+					)
 				)
 			);
 
