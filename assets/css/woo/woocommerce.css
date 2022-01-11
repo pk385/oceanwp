@@ -4000,7 +4000,7 @@ form.checkout > .blockUI {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.distraction-free #site-header {
+.distraction-free #site-header #site-navigation-wrap{
   display: none;
 }
 
