@@ -91,6 +91,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 							'medium'      => esc_html__( 'Medium', 'oceanwp' ),
 							'vertical'    => esc_html__( 'Vertical', 'oceanwp' ),
 							'custom'      => esc_html__( 'Custom Header', 'oceanwp' ),
+							'builder'     => esc_html__( 'Header Builder', 'oceanwp' ),
 						),
 					)
 				)

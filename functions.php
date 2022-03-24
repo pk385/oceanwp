@@ -190,6 +190,7 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'oceanwp-strings.php';
 		require_once $dir . 'oceanwp-svg.php';
 		require_once $dir . 'oceanwp-theme-icons.php';
+		require_once $dir . 'builder/header/builder.php';
 		require_once $dir . 'customizer/controls/typography/webfonts.php';
 		require_once $dir . 'walker/init.php';
 		require_once $dir . 'walker/menu-walker.php';

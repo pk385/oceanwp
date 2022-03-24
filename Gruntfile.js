@@ -283,6 +283,7 @@ module.exports = function (grunt) {
           "assets/css/llms/llms.css": "sass/llms.scss",
           "assets/css/learndash/learndash.css": "sass/learndash.scss",
           "assets/css/style.css": "sass/stylesheet.scss",
+          "inc/builder/header/assets/css/ocean-header-builder.css": "inc/builder/header/assets/css/ocean-header-builder.scss",
         },
       },
       prod: {

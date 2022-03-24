@@ -1,0 +1,15 @@
+.ocean-header-builder {
+  position: relative;
+  display: flex;
+  align-content: center;
+}
+
+.ocean-header-builder .ocean-hb-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ocean-header-builder .ocean-hb-row .ocean-hb-inner-column {
+  flex: 1 1 0px;
+}
