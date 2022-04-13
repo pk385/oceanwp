@@ -177,7 +177,7 @@ if ( ! class_exists( 'OceanWP_Header_Builder_Structure' ) ) {
 					}
 
 					// Meta.
-					if ( 'social_menu' === $element ) {
+					if ( 'social' === $element ) {
 
 						get_template_part( 'partials/header/social' );
 

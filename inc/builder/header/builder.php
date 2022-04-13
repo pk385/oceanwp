@@ -17,10 +17,6 @@ if ( ! class_exists( 'OceanWP_Header_Builder' ) ) {
 		 */
 		public function __construct() {
 
-			if ( 'builder' !== oceanwp_header_style() ) {
-				return;
-			}
-
 			$this->ocean_hb_required();
 			add_action( 'wp', array( $this, 'ocean_add_header_builder_hook' ) );
 

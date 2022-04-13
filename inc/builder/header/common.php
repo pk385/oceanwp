@@ -8,26 +8,47 @@
 /**
  * Returns header builder column elements for the customizer
  */
-if ( ! function_exists( 'oceanwp_hb_column_elements' ) ) {
 
-	function oceanwp_hb_column_elements() {
+function oceanwp_hb_column_elements( $i, $j ) {
 
-		// Default elements
-		$elements = apply_filters(
-			'oceanwp_hb_column_elements',
-			array(
-				'logo'         => esc_html__( 'Logo', 'oceanwp' ),
-				'menu'         => esc_html__( 'Menu', 'oceanwp' ),
-				'social_menu'  => esc_html__( 'Social Menu', 'oceanwp' ),
-				'search_icon'  => esc_html__( 'Search Icon', 'oceanwp' ),
-				'search_bar'   => esc_html__( 'Search Bar', 'oceanwp' ),
-			)
-		);
+	// Default elements
+	$elements = apply_filters(
+		'oceanwp_hb_column_elements',
+		array(
+			'logo'   => esc_html__( 'Logo', 'oceanwp' ),
+			'menu'   => esc_html__( 'Menu', 'oceanwp' ),
+			'social' => esc_html__( 'Social Icons', 'oceanwp' ),
+			'search' => esc_html__( 'Search', 'oceanwp' ),
+		)
+	);
 
-		// Return elements
-		return $elements;
+	$ele11 = get_theme_mod( 'ocean_hb_column_11_general_elements', array() );
+	$ele12 = get_theme_mod( 'ocean_hb_column_12_general_elements', array() );
+	$ele13 = get_theme_mod( 'ocean_hb_column_13_general_elements', array() );
+	$ele21 = get_theme_mod( 'ocean_hb_column_21_general_elements', array() );
+	$ele22 = get_theme_mod( 'ocean_hb_column_22_general_elements', array() );
+	$ele23 = get_theme_mod( 'ocean_hb_column_23_general_elements', array() );
+	$ele31 = get_theme_mod( 'ocean_hb_column_31_general_elements', array() );
+	$ele32 = get_theme_mod( 'ocean_hb_column_32_general_elements', array() );
+	$ele33 = get_theme_mod( 'ocean_hb_column_33_general_elements', array() );
 
+	$selected = array_unique(array_merge( $ele11, $ele12, $ele13, $ele21, $ele22, $ele23, $ele31, $ele32, $ele33 ) );
+
+	$active = get_theme_mod( 'ocean_hb_column_' . $i . $j . '_general_elements', array() );
+
+	foreach ($elements as $element => $value) {
+		foreach ($selected as $key ) {
+			if ( ! in_array( $key, $active, true ) ) {
+				if ( $key !== $elements ) {
+					unset($elements[$key]);
+				}
+			}
+		}
 	}
+
+	// Return elements
+	return $elements;
+
 }
 
 /**
